@@ -2,9 +2,14 @@
 
 const Home = () =>{
     return(
-        <div>
-            <h1>HOME</h1>
+        <div className="container">
+            <div className="d-flex justify-content-between">
+                <div className="box" style={{width:'200px', height:'200px', backgroundColor:'black'}}></div>
+                <div className="box" style={{width:'200px', height:'200px', backgroundColor:'black'}}></div>
+                <div className="box" style={{width:'200px', height:'200px', backgroundColor:'black'}}></div>
+            </div>
         </div>
+        
     )
 }
 
