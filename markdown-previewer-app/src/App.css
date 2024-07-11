@@ -1,0 +1,6 @@
+.navbar-color{
+    background-color: var(--black);
+}
+.border-bottom-color{
+    border-bottom: 2px solid var(--folly);
+}
