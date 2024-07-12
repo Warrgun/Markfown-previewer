@@ -18,23 +18,29 @@ function App() {
             <Navbar.Brand as={Link} to='/'>
               <img alt='Logo'/>
             </Navbar.Brand>
-              <Navbar.Toggle  onClick={handleShow} aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
-                <span className='navbar-toggler-icon'></span>
-              </Navbar.Toggle>
+              <Navbar.Toggle onClick={handleShow} aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation' className='border-0 shadow-none'/>
               <Navbar.Offcanvas show={show} onHide={handleClose} id='navbarNav' placement='end' className='text-bg-dark'>
                 <Offcanvas.Header className='border-bottom-color' closeButton>
                   <Offcanvas.Title ><img alt='Logo'/></Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className='d-flex flex-column flex-lg-row align-items-center p-4 p-lg-0'>
                     <Nav className='justify-content-center justify-content-lg-end align-items-center flex-grow-1 gap-4'>
-                      <Nav.Link as={Link} to='/' active aria-current='page' onClick={handleClose}>Home</Nav.Link>
-                      <Nav.Link as={Link} to='/about-us' onClick={handleClose}>About Us</Nav.Link>
-                      <Nav.Link href='Contact' onClick={handleClose}>Contact</Nav.Link>
-                      <Nav.Link as={Link} to='/app' onClick={handleClose}>START</Nav.Link>
+                      <Nav.Item>
+                        <Nav.Link as={Link} to='/' active aria-current='page' onClick={handleClose}>Home</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link as={Link} to='/about-us' onClick={handleClose}>About Us</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link href='Contact' onClick={handleClose}>Contact</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item className=''>
+                        <Nav.Link as={Link} to='/app' onClick={handleClose} className='start-btn'>START</Nav.Link>
+                      </Nav.Item>
                     </Nav>
                     <div className=" d-lg-flex ms-lg-3">
-                      <Button variant='outline-primary' type='button' className='btn-light rounded-0 m-lg-2 me-2'>Learn</Button>
-                      <Button variant='outline-light' type='button' className='btn-dark rounded-0 m-lg-2'>Sign Up</Button> 
+                      <Button type='button' className='button-one rounded-0 m-lg-2 me-2 fw-bold'>Learn</Button>
+                      <Button type='button' className='button-two rounded-0 m-lg-2 fw-bold'>Sign Up</Button> 
                     </div>
                 </Offcanvas.Body>
                 </Navbar.Offcanvas>

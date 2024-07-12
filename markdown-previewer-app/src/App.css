@@ -4,3 +4,58 @@
 .border-bottom-color{
     border-bottom: 2px solid var(--folly);
 }
+.offcanvas-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    border: none;
+}
+.start-btn{
+    color:#FC81FF !important;
+    font-weight: bold !important;
+}
+
+.button-one{
+    background-color: white !important;
+    color: var(--folly) !important;
+    border: 2px solid var(--folly) !important;
+}
+
+.button-two{
+    background-color: var(--folly) !important;
+    border: 2px solid var(--folly) !important;
+}
+
+.start-btn:active{
+    color:hsl(299, 100%, 85%) !important;
+}
+.button-one:active{
+    background-color: var(--folly) !important;
+    color: white !important;
+}
+.button-two:active{
+    background-color: white !important;
+    color: var(--folly) !important;
+}
+
+.background-img{
+    width: 100%;
+    height: 50vh;
+    background-image: url('D:\react_projects\Markdown-previewer\markdown-previewer-app\src\assets\main.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width:992px){
+    .start-btn:hover{
+        color:hsl(299, 100%, 85%) !important;
+    }
+    .button-one:hover{
+        background-color: var(--folly) !important;
+        color: white !important;
+    }
+    .button-two:hover{
+        background-color: white !important;
+        color: var(--folly) !important;
+    }
+}
+
