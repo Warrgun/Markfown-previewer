@@ -63,7 +63,7 @@ effortlessly.</p>
                         </div>  
                     </div>
                     <div className="d-flex flex-column w-100 mb-5">
-                    <div class="row text-center">
+                        <div class="row text-center">
                             <div class="col-4">
                                 <div class="card ">
                                 <img src="..." class="card-img-top" alt="..."/>
@@ -92,6 +92,10 @@ effortlessly.</p>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className="my-5">
+                            <Button type="button" className="button-one rounded-0 fw-bold">Learn More</Button>
+                            <Button type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0">Sign Up<i className="arrow ms-2"></i></Button>
                         </div>
                     </div>
                 </div>
