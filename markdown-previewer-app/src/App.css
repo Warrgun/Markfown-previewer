@@ -57,6 +57,12 @@
     background-position: center;
 }
 
+.hr{
+    border: 0;
+    border-top: 2px solid var(--folly) !important;
+    opacity: 1 !important;
+}
+
 @media (min-width:992px){
     .start-btn:hover{
         color:hsl(299, 100%, 85%) !important;
