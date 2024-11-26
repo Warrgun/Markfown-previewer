@@ -63,6 +63,10 @@
     opacity: 1 !important;
 }
 
+.input-control:focus{
+    box-shadow: 0 0 0 0.2rem hsla(349, 100%, 63%, 0.5) !important; 
+}
+
 @media (min-width:992px){
     .start-btn:hover{
         color:hsl(299, 100%, 85%) !important;
