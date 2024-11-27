@@ -1,17 +1,23 @@
-import { Container, Button} from "react-bootstrap"
+import { Container, Button} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faStar} from "@fortawesome/free-solid-svg-icons"
-import img from './assets/main.jpg'
-import pic1 from './assets/pic1.jpg'
-import card1 from './assets/card1.jpg'
-import card2 from './assets/card2.jpg'
-import card3 from './assets/card3.jpg'
-import avatar from './assets/avatar.jpg'
+import {faStar} from "@fortawesome/free-solid-svg-icons";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import img from './assets/main.jpg';
+import pic1 from './assets/pic1.jpg';
+import card1 from './assets/card1.jpg';
+import card2 from './assets/card2.jpg';
+import card3 from './assets/card3.jpg';
+import avatar from './assets/avatar.jpg';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
+
+import {EffectCoverflow, Navigation} from 'swiper/modules';
 
 const Home = () =>{
     return(
         <>
-            <div className="background-img mb-5" style={{backgroundImage:`url(${img})`, height:'50vh'}}></div>
+            <div className="background-img mb-5" style={{backgroundImage:`url(${img})`, height:'60vh'}}></div>
             <Container>
                 <div className="d-flex w-100 flex-column">
                     <div className="d-flex w-100">
@@ -71,36 +77,54 @@ effortlessly.</p>
                 </div>
             </Container>
             <Container fluid className="d-flex flex-column w-100 mb-5">
-                <div className="row text-center my-3 justify-content-center" data-bs-theme="dark">
-                    <div className="col-3">
-                        <div className="card h-100">
-                        <img src={card1} className="card-img-top" alt="card1"/>
-                            <div className="card-body">
-                                <h3 className="card-title">Live Preview</h3>
-                                <p className="card-text">See your changes in real-time as you type.</p>
+                    <Swiper
+                        effect={'coverflow'} 
+                        grabCursor={true}
+                        centeredSlides={true}
+                        slidesPerView={"auto"}
+                        spaceBetween={30}
+                        loop={true}
+                        coverflowEffect={{
+                            rotate:50,
+                            stretch:0,
+                            depth: 100,
+                            modifier:1,
+                            slideShadows:true
+                        }}
+                        navigation={true}
+                        modules={[EffectCoverflow, Navigation]}
+                        className="mySwiper text-center my-3 p-5"
+                        data-bs-theme="dark"
+                    >
+                        <SwiperSlide style={{width:"25em"}}>
+                                <div className="card">
+                                <img src={card1} className="card-img-top" alt="card1"/>
+                                    <div className="card-body">
+                                        <h3 className="card-title">Live Preview</h3>
+                                        <p className="card-text">See your changes in real-time as you type.</p>
+                                    </div>
+                                </div>
+                        </SwiperSlide>
+                        <SwiperSlide style={{width:"25em"}}>
+                                <div className="card">
+                                <img src={card2} className="card-img-top" alt="card2"/>
+                                    <div className="card-body">
+                                        <h3 className="card-title">Syntax Highlighting</h3>
+                                        <p className="card-text">Highlight and differentiate your code for 
+                                        better readability.</p>
+                                    </div>
+                                </div>
+                        </SwiperSlide>
+                        <SwiperSlide style={{width:"25em"}}>
+                            <div className="card">
+                            <img src={card3} className="card-img-top" alt="card3"/>
+                                <div className="card-body">
+                                    <h3 className="card-title">Export Options</h3>
+                                    <p className="card-text">Save or share your documents in various formats.</p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="col-3">
-                        <div className="card h-100">
-                        <img src={card2} className="card-img-top" alt="card2"/>
-                            <div className="card-body">
-                                <h3 className="card-title">Syntax Highlighting</h3>
-                                <p className="card-text">Highlight and differentiate your code for 
-                                better readability.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-3">
-                        <div className="card h-100">
-                        <img src={card3} className="card-img-top" alt="card3"/>
-                            <div className="card-body">
-                                <h3 className="card-title">Export Options</h3>
-                                <p className="card-text">Save or share your documents in various formats.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        </SwiperSlide> 
+                    </Swiper>
                 <Container className="my-5">
                     <Button type="button" className="button-one rounded-0 fw-bold">Learn More</Button>
                     <Button type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0">Sign Up<i className="arrow ms-2"></i></Button>
@@ -144,4 +168,4 @@ effortlessly.</p>
     )
 }
 
-export default Home
+export default Home;

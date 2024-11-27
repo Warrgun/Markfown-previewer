@@ -1,20 +1,56 @@
-import { useState } from 'react'
+import React, { useState, useRef, useCallback, useEffect } from 'react'
 import {Link, Route, Routes} from 'react-router-dom'
 import Home from './Home'
 import Footer from './Footer'
 import NotFound from './NotFound'
+import useThrottle from './custom-hooks/useThrottle'
 import {Navbar, Button, Container, Nav, Offcanvas} from 'react-bootstrap'
 import './App.css'
 
 function App() {
   const [show, setShow] = useState(false);
+  const lastScrollPosition = useRef(0);
+  const navContainer = useRef(null);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
-  
+  const handleScroll = useCallback(() =>{
+    let scrollPosition = window.scrollY != undefined ? window.scrollY: document.documentElement.scrollTop;
+
+    if(scrollPosition > lastScrollPosition.current){
+      navContainer.current.style.top = '-80px'; 
+    }
+    else if(scrollPosition < lastScrollPosition.current){
+      navContainer.current.style.top = '0';
+    }
+    lastScrollPosition.current = Math.max(scrollPosition,0);
+  },[]);
+
+  const throttledScrollFunc = useThrottle(handleScroll,10);
+
+  const updateEventListener = useCallback(() =>{
+    const mobile = window.matchMedia('only screen and (max-width: 991px)').matches;
+    if(!mobile){
+      document.addEventListener('scroll', throttledScrollFunc,{passive:true});
+    }
+    else{
+      document.removeEventListener('scroll', throttledScrollFunc)
+    }
+  },[throttledScrollFunc]);
+
+  useEffect(() =>{
+    updateEventListener();
+    window.addEventListener('resize', updateEventListener);
+
+    return(()=>{
+      document.removeEventListener('scroll', throttledScrollFunc);
+      window.removeEventListener('resize', updateEventListener);
+    })
+  },[throttledScrollFunc])
+
   return (
     <>  
-      <Navbar expand='lg' className='navbar-dark navbar-color border-bottom-color'>
+      <Navbar ref={navContainer} fixed='top' expand='lg' className='navbar-dark navbar-color border-bottom-color'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
             <img alt='Logo'/>

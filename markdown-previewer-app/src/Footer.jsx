@@ -18,7 +18,7 @@ const Footer = () =>{
                                         Provide correct Email.
                                     </Form.Control.Feedback>
                                 </Form.Group>
-                                <Button type="button" className="button-one bg-transparent rounded-0 fw-bold ms-3">
+                                <Button type="button" className="button-one rounded-0 fw-bold ms-3">
                                     Join
                                 </Button>
                             </Form>
@@ -26,7 +26,7 @@ const Footer = () =>{
                     </Row>
                     <Row className=" border-top">
                         <Col>
-                            <p className=" text-body-secondary text-center mt-3 mb-0">© 2030 Markdown Previewer, Inc</p>
+                            <p className=" text-body-secondary text-center mt-3 mb-0">© 2030 Markdown Previewer, Inc.</p>
                         </Col>
                     </Row>
                 </Container>

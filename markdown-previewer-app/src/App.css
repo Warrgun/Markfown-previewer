@@ -1,5 +1,6 @@
 .navbar-color{
     background-color: var(--black);
+    transition: top 200ms ease-in;
 }
 .border-bottom-color{
     border-bottom: 2px solid var(--folly);
@@ -14,7 +15,7 @@
 }
 
 .button-one{
-    background-color: white !important;
+    background-color: transparent !important;
     color: var(--folly) !important;
     border: 2px solid var(--folly) !important;
 }
@@ -44,10 +45,12 @@
 .button-one:active{
     background-color: var(--folly) !important;
     color: white !important;
+    transition: none !important;
 }
 .button-two:active{
-    background-color: white !important;
+    background-color: transparent !important;
     color: var(--folly) !important;
+    transition: none !important;
 }
 
 .background-img{
@@ -76,7 +79,7 @@
         color: white !important;
     }
     .button-two:hover{
-        background-color: white !important;
+        background-color: transparent !important;
         color: var(--folly) !important;
     }
     .button-three:hover .arrow{
