@@ -6,6 +6,7 @@
     --davys-gray: hsla(0, 4%, 34%, 1);
 }
 
-body{
+body, html{
+    width: 100%;
     overflow-x: hidden;
 }

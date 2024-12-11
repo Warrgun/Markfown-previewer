@@ -1,4 +1,4 @@
-import { Container, Button, Image, Row, Col} from "react-bootstrap";
+import { Container, Button, Image, Row, Col, Card, CardGroup} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import {Swiper, SwiperSlide} from 'swiper/react';
@@ -16,66 +16,68 @@ import {EffectCoverflow, Pagination} from 'swiper/modules';
 const Home = () =>{
     return(
         <>
-            <div className="background-img mb-5" style={{backgroundImage:`url(${img})`, height:'60vh'}}></div>
-            <Container>
-                <div className="d-flex w-100 flex-column">
-                    <div className="d-flex w-100">
-                        <div className="p-2 w-100 my-5">
+            <div className="background-img mb-5" style={{backgroundImage:`url(${img})`}}></div>
+            <Container >
+                <Row>
+                    <Col md={6}>
+                        <div className="p-2 w-100 my-md-5">
                             <h1>Expirience the Power</h1>
                             <h1>of Markdown</h1>
                             <h1>Previewer</h1>
                         </div>
-                        <div className="p-2 w-100 my-5">
+                    </Col>
+                    <Col md={6}>
+                        <div className="p-2 w-100 my-md-5">
                             <p className=" fs-5">Effortlessly convert your markdown into beautiful HTML with our user-friendly previewer.</p>
                             <div className="d-flex my-5">
                                 <Button type="button" className="button-two rounded-0 fw-bold">Get Started</Button>
                                 <Button type="button" className="button-one rounded-0 ms-4 fw-bold">Learn More</Button>
                             </div>
                         </div>
-                    </div> 
-                    <Row className=" my-md-5">
-                        <Col md={6}> 
-                            <Image src={pic1} fluid/>
-                        </Col>
-                        <Col md={6} className="mt-4 mt-md-0">
-                            <p className=" d-block d-none d-lg-block">Simplistic</p>
-                            <h2 className=" text-lg-start">Discover the Power of</h2>
-                            <h2 className=" text-lg-start">Markdown Previewer</h2>
-                            <p className="fs-5 my-md-5 my-4 text-lg-start">Join thousands of users who have experienced the convenience and
-                            efficiency of our markdown previewer. Preview your documents with ease
-                            and enjoy the support for various markdown elements.</p>
-                            <div className="d-flex w-100 gap-2 gap-md-0 justify-content-between">
-                                <div className="pe-1 pe-md-2 rounded-2 bg-cards text-center">
-                                    <h3 className="fw-bold">50%</h3>
-                                    <p>Increase in User Satisfaction with
-                                    Markdown Previewer</p>
-                                </div>
-                                <div className="ps-1 text-center ps-sm-0 pe-md-2 bg-cards rounded-2">
-                                    <h3 className="fw-bold">50%</h3>
-                                    <p>Reduction in Document Errors with
-                                    Markdown Previewer</p>
-                                </div>
+                    </Col>
+                </Row> 
+                <Row className=" my-2 my-md-5 pb-md-5">
+                    <Col md={6}> 
+                        <Image src={pic1} loading="lazy" fluid/>
+                    </Col>
+                    <Col md={6} className="mt-5 mt-md-0">
+                        <p className=" d-block d-none d-lg-block">Simplistic</p>
+                        <h2 className=" text-lg-start">Discover the Power of</h2>
+                        <h2 className=" text-lg-start">Markdown Previewer</h2>
+                        <p className="fs-5 my-md-5 my-4 text-lg-start">Join thousands of users who have experienced the convenience and
+                        efficiency of our markdown previewer. Preview your documents with ease
+                        and enjoy the support for various markdown elements.</p>
+                        <div className="d-flex w-100 gap-2 gap-md-0 justify-content-between">
+                            <div className="pe-1 pe-md-2 rounded-2 bg-cards text-lg-start text-center">
+                                <h3 className="fw-bold">50%</h3>
+                                <p>Increase in User Satisfaction with
+                                Markdown Previewer</p>
                             </div>
-                            <div className="my-4 my-md-5 text-lg-start">
-                                <Button type="button" className="button-one rounded-0 fw-bold">Learn More</Button>
-                                <Button type="button" className="button-three bg-transparent border-0 rounded-0 fw-bold ms-4">Sign Up<i className="arrow ms-2"></i></Button>
+                            <div className="ps-1 text-center text-lg-start ps-sm-0 pe-md-2 bg-cards rounded-2">
+                                <h3 className="fw-bold">50%</h3>
+                                <p>Reduction in Document Errors with
+                                Markdown Previewer</p>
                             </div>
-                        </Col>
-                    </Row>
-                    <div className="d-flex w-100">
-                        <div className="p-2 w-100 my-5">
-                            <p>Simplified</p>
-                            <h2>Expirience the Power of</h2>
-                            <h2>Mardown Previewer</h2>
                         </div>
-                        <div className="p-2 w-100 my-5">
-                            <p className="fs-5 p-0">Our markdown previewer offers a range of key features to enhance your
+                        <div className=" my-5 text-lg-start">
+                            <Button type="button" className="button-one rounded-0 fw-bold">Learn More</Button>
+                            <Button type="button" className="button-three bg-transparent border-0 rounded-0 fw-bold ms-4">Sign Up<i className="arrow ms-2"></i></Button>
+                        </div>
+                    </Col>
+                </Row>
+                <Row className=" pt-md-5">
+                    <Col md={6}>
+                        <p className=" d-block d-none d-lg-block">Simplified</p>
+                        <h2>Expirience the Power of</h2>
+                        <h2 className=" mb-4 mb-md-0">Mardown Previewer</h2>
+                    </Col>
+                    <Col md={6}>
+                        <p className="fs-5 p-0">Our markdown previewer offers a range of key features to enhance your
 writing experience. With live preview, syntax highlighting, and export
 options, you can create beautiful and professional-looking documents
 effortlessly.</p>
-                        </div>  
-                    </div>
-                </div>
+                    </Col>  
+                </Row>
             </Container>
             <Container fluid className="d-flex flex-column w-100 mb-5">
                     <Swiper
@@ -136,9 +138,9 @@ effortlessly.</p>
             <div className="d-flex w-100 pb-5">
                 <hr className="w-100 mx-0 hr"/>
             </div>
-            <Container>    
-                <div className="d-flex w-100 my-5 flex-column">
-                    <div className="w-100 text-center">
+            <Container className="mt-3 mb-5">
+                <Row>
+                    <Col xs={12} className=" text-center">
                         <div className="w-100 mb-3 fs-5">
                             <FontAwesomeIcon icon={faStar} style={{color:"var(--folly)"}} />
                             <FontAwesomeIcon icon={faStar} style={{color:"var(--folly)"}}/>
@@ -149,22 +151,18 @@ effortlessly.</p>
                         <h3>The markdown previewer has been a game-changer for my writing</h3>
                         <h3>process. It allows me to easily format and preview my markdown</h3>
                         <h3>documents, saving me time and effort.</h3>
-                    </div>
-                    <div className="d-flex flex-row align-items-center justify-content-center my-5">
-                        <div className="card border-0 d-flex flex-row align-items-center">
-                            <img src={avatar} alt="avatar" />
-                            <div className="card-body" style={{borderRight:"2px solid var(--folly)"}}>
-                                <h6 className="card-title"> John Doe</h6>
-                                <p className="card-text">content Writer, ABC Company</p>
-                            </div>
-                        </div>
-                        <div className="card border-0">
-                            <div className="card-body">
-                                <h5 className="card-title fw-bold"> LOGO</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </Col>
+                    <Col xs='auto' className="mx-auto">
+                        <Card className="border-0 d-flex flex-row align-items-center my-4 ">
+                            <Image src={avatar} alt="avatar" roundedCircle fluid loading="lazy"/>
+                            <Card.Body style={{borderRight:"2px solid var(--folly)"}}>
+                                <Card.Title> John Doe </Card.Title>
+                                <Card.Text>Content Writer, ABC Company</Card.Text>
+                            </Card.Body>
+                            <Card.Footer className=" fw-bold fs-3 border-0 bg-transparent ms-2"> LOGO </Card.Footer>
+                        </Card>
+                    </Col>
+                </Row>
             </Container>
         </>
         

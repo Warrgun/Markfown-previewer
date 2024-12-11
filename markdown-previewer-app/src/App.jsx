@@ -50,7 +50,7 @@ function App() {
 
   return (
     <>  
-      <Navbar ref={navContainer} fixed='top' expand='lg' className='navbar-dark navbar-color border-bottom-color'>
+      <Navbar ref={navContainer} fixed='top' expand='lg' className='navbar-dark navbar-color border-bottom-color w-100'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
             <img alt='Logo'/>
