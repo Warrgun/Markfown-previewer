@@ -1,4 +1,4 @@
-import { Container, Button} from "react-bootstrap";
+import { Container, Button, Image, Row, Col} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import {Swiper, SwiperSlide} from 'swiper/react';
@@ -10,9 +10,8 @@ import card3 from './assets/card3.jpg';
 import avatar from './assets/avatar.jpg';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';
-
-import {EffectCoverflow, Navigation} from 'swiper/modules';
+import 'swiper/css/pagination';
+import {EffectCoverflow, Pagination} from 'swiper/modules';
 
 const Home = () =>{
     return(
@@ -33,34 +32,36 @@ const Home = () =>{
                                 <Button type="button" className="button-one rounded-0 ms-4 fw-bold">Learn More</Button>
                             </div>
                         </div>
-                    </div>
-                    <div className="d-flex w-100 mb-5">
-                        <div className="background-img me-5" style={{backgroundImage:`url(${pic1})`}}></div>
-                        <div className="p-2 w-100">
-                            <p>Simplistic</p>
-                            <h2>Discover the Power of</h2>
-                            <h2>Markdown Previewer</h2>
-                            <p className="fs-5 my-5">Join thousands of users who have experienced the convenience and
+                    </div> 
+                    <Row className=" my-md-5">
+                        <Col md={6}> 
+                            <Image src={pic1} fluid/>
+                        </Col>
+                        <Col md={6} className="mt-4 mt-md-0">
+                            <p className=" d-block d-none d-lg-block">Simplistic</p>
+                            <h2 className=" text-lg-start">Discover the Power of</h2>
+                            <h2 className=" text-lg-start">Markdown Previewer</h2>
+                            <p className="fs-5 my-md-5 my-4 text-lg-start">Join thousands of users who have experienced the convenience and
                             efficiency of our markdown previewer. Preview your documents with ease
                             and enjoy the support for various markdown elements.</p>
-                            <div className="d-flex">
-                                <div className=" pe-2">
+                            <div className="d-flex w-100 gap-2 gap-md-0 justify-content-between">
+                                <div className="pe-1 pe-md-2 rounded-2 bg-cards text-center">
                                     <h3 className="fw-bold">50%</h3>
                                     <p>Increase in User Satisfaction with
                                     Markdown Previewer</p>
                                 </div>
-                                <div className="pe-2">
+                                <div className="ps-1 text-center ps-sm-0 pe-md-2 bg-cards rounded-2">
                                     <h3 className="fw-bold">50%</h3>
                                     <p>Reduction in Document Errors with
                                     Markdown Previewer</p>
                                 </div>
                             </div>
-                            <div className="my-5">
-                            <Button type="button" className="button-one rounded-0 fw-bold">Learn More</Button>
-                            <Button type="button" className="button-three bg-transparent border-0 rounded-0 fw-bold ms-4">Sign Up<i className="arrow ms-2"></i></Button>
+                            <div className="my-4 my-md-5 text-lg-start">
+                                <Button type="button" className="button-one rounded-0 fw-bold">Learn More</Button>
+                                <Button type="button" className="button-three bg-transparent border-0 rounded-0 fw-bold ms-4">Sign Up<i className="arrow ms-2"></i></Button>
                             </div>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                     <div className="d-flex w-100">
                         <div className="p-2 w-100 my-5">
                             <p>Simplified</p>
@@ -83,7 +84,7 @@ effortlessly.</p>
                         centeredSlides={true}
                         slidesPerView={"auto"}
                         spaceBetween={30}
-                        loop={true}
+                        loop={false}
                         coverflowEffect={{
                             rotate:50,
                             stretch:0,
@@ -91,12 +92,14 @@ effortlessly.</p>
                             modifier:1,
                             slideShadows:true
                         }}
-                        navigation={true}
-                        modules={[EffectCoverflow, Navigation]}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[EffectCoverflow, Pagination]}
                         className="mySwiper text-center my-3 p-5"
                         data-bs-theme="dark"
                     >
-                        <SwiperSlide style={{width:"25em"}}>
+                        <SwiperSlide className="swiper-slide-css">
                                 <div className="card">
                                 <img src={card1} className="card-img-top" alt="card1"/>
                                     <div className="card-body">
@@ -105,7 +108,7 @@ effortlessly.</p>
                                     </div>
                                 </div>
                         </SwiperSlide>
-                        <SwiperSlide style={{width:"25em"}}>
+                        <SwiperSlide className="swiper-slide-css">
                                 <div className="card">
                                 <img src={card2} className="card-img-top" alt="card2"/>
                                     <div className="card-body">
@@ -115,7 +118,7 @@ effortlessly.</p>
                                     </div>
                                 </div>
                         </SwiperSlide>
-                        <SwiperSlide style={{width:"25em"}}>
+                        <SwiperSlide className="swiper-slide-css">
                             <div className="card">
                             <img src={card3} className="card-img-top" alt="card3"/>
                                 <div className="card-body">
