@@ -6,10 +6,10 @@ const Footer = () =>{
             <footer className=" text-light p-5" style={{backgroundColor:"var(--black)"}}>
                 <Container data-bs-theme="dark">
                     <Row className="justify-content-center">
-                        <Col  lg={3} md={6} sm={12}>
+                        <Col xs={6} className=" w-auto">
                         <p className=" fw-light"><span className="fw-bold">Stay informed, subscribe</span><br/>Receive updates, news, and exclusive offers</p>
                         </Col>
-                        <Col lg={3} md={6} sm={12}>
+                        <Col xs={6} className=" w-auto mb-md-0 mb-5">
                             <Form className="d-flex flex-row justify-content-end">
                                 <Form.Group controlId="formEmail">
                                     <Form.Label hidden>Email address</Form.Label>

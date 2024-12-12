@@ -71,13 +71,10 @@ function App() {
                     <Nav.Item>
                       <Nav.Link href='Contact' onClick={handleClose}>Contact</Nav.Link>
                     </Nav.Item>
-                    <Nav.Item className=''>
-                      <Nav.Link as={Link} to='/app' onClick={handleClose} className='start-btn'>START</Nav.Link>
-                    </Nav.Item>
                   </Nav>
                   <div className=" d-lg-flex ms-lg-3">
-                    <Button type='button' className='button-one rounded-0 m-lg-2 me-2 fw-bold'>Learn</Button>
-                    <Button type='button' className='button-two rounded-0 m-lg-2 fw-bold'>Sign Up</Button> 
+                    <Button type='button' className='button-one rounded-0 m-lg-2 me-2 fw-bold'>Sign Up</Button>
+                    <Button type='button' as={Link} to='/app' className='button-two rounded-0 m-lg-2 fw-bold'>Start For Free</Button> 
                   </div>
               </Offcanvas.Body>
               </Navbar.Offcanvas>

@@ -130,7 +130,7 @@ effortlessly.</p>
                             </div>
                         </SwiperSlide> 
                     </Swiper>
-                <Container className="my-5">
+                <Container className="mt-5 mb-4">
                     <Button type="button" className="button-one rounded-0 fw-bold">Learn More</Button>
                     <Button type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0">Sign Up<i className="arrow ms-2"></i></Button>
                 </Container>
@@ -148,9 +148,13 @@ effortlessly.</p>
                             <FontAwesomeIcon icon={faStar} style={{color:"var(--folly)"}}/>
                             <FontAwesomeIcon icon={faStar} style={{color:"var(--folly)"}}/>
                         </div>
-                        <h3>The markdown previewer has been a game-changer for my writing</h3>
-                        <h3>process. It allows me to easily format and preview my markdown</h3>
-                        <h3>documents, saving me time and effort.</h3>
+                        <div className="d-flex mx-auto text-wrap-flex" >
+                            <h3>
+                                The markdown previewer has been a game-changer for my writing
+                                process. It allows me to easily format and preview my markdown
+                                documents, saving me time and effort.
+                            </h3>
+                        </div>
                     </Col>
                     <Col xs='auto' className="mx-auto">
                         <Card className="border-0 d-flex flex-row align-items-center my-4 ">
