@@ -8,6 +8,7 @@ import card1 from './assets/card1.jpg';
 import card2 from './assets/card2.jpg';
 import card3 from './assets/card3.jpg';
 import avatar from './assets/avatar.jpg';
+import logo from './assets/logo.png';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
@@ -85,7 +86,7 @@ effortlessly.</p>
                         grabCursor={true}
                         centeredSlides={true}
                         slidesPerView={"auto"}
-                        spaceBetween={30}
+                        initialSlide={1}
                         loop={false}
                         coverflowEffect={{
                             rotate:50,
@@ -101,7 +102,7 @@ effortlessly.</p>
                         className="mySwiper text-center my-3 p-5"
                         data-bs-theme="dark"
                     >
-                        <SwiperSlide className="swiper-slide-css">
+                        <SwiperSlide>
                                 <div className="card">
                                 <img src={card1} className="card-img-top" alt="card1"/>
                                     <div className="card-body">
@@ -110,7 +111,7 @@ effortlessly.</p>
                                     </div>
                                 </div>
                         </SwiperSlide>
-                        <SwiperSlide className="swiper-slide-css">
+                        <SwiperSlide>
                                 <div className="card">
                                 <img src={card2} className="card-img-top" alt="card2"/>
                                     <div className="card-body">
@@ -120,7 +121,7 @@ effortlessly.</p>
                                     </div>
                                 </div>
                         </SwiperSlide>
-                        <SwiperSlide className="swiper-slide-css">
+                        <SwiperSlide>
                             <div className="card">
                             <img src={card3} className="card-img-top" alt="card3"/>
                                 <div className="card-body">
@@ -128,7 +129,7 @@ effortlessly.</p>
                                     <p className="card-text">Save or share your documents in various formats.</p>
                                 </div>
                             </div>
-                        </SwiperSlide> 
+                        </SwiperSlide>
                     </Swiper>
                 <Container className="mt-5 mb-4">
                     <Button type="button" className="button-one rounded-0 fw-bold">Learn More</Button>
@@ -163,7 +164,9 @@ effortlessly.</p>
                                 <Card.Title> John Doe </Card.Title>
                                 <Card.Text>Content Writer, ABC Company</Card.Text>
                             </Card.Body>
-                            <Card.Footer className=" fw-bold fs-3 border-0 bg-transparent ms-2"> LOGO </Card.Footer>
+                            <Card.Footer className=" fw-bold fs-3 border-0 bg-transparent ms-2">
+                                <Image src={logo} width={100} alt="logo"/>
+                            </Card.Footer>
                         </Card>
                     </Col>
                 </Row>
