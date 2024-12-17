@@ -18,7 +18,7 @@ const Home = () =>{
     return(
         <>
             <div className="background-img mb-5" style={{backgroundImage:`url(${img})`}}></div>
-            <Container >
+            <Container className="flex-grow-1">
                 <Row>
                     <Col md={6}>
                         <div className="p-2 w-100 my-md-5">

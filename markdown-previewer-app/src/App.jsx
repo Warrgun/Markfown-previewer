@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
-import {Link, Route, Routes} from 'react-router-dom'
+import {Link, Route, Routes, NavLink} from 'react-router-dom'
 import Home from './Home'
 import Footer from './Footer'
 import NotFound from './NotFound'
@@ -12,7 +12,9 @@ function App() {
   const [show, setShow] = useState(false);
   const lastScrollPosition = useRef(0);
   const navContainer = useRef(null);
+  const contactRef = useRef(null);
 
+  const handleScrollContact = () => contactRef.current.scrollIntoView();
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   const handleScroll = useCallback(() =>{
@@ -54,7 +56,7 @@ function App() {
       <div className="d-flex flex-column min-vh-100">
         <Navbar ref={navContainer} fixed='top' expand='md' className='navbar-dark navbar-color border-bottom-color w-100'>
           <Container fluid>
-            <Navbar.Brand as={Link} to='/'>
+            <Navbar.Brand href='/'>
               <img alt='Logo' src={logo} style={{width:"2.9em"}}/>
             </Navbar.Brand>
             <Navbar.Toggle onClick={handleShow} aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation' className='border-0 shadow-none'/>
@@ -65,13 +67,13 @@ function App() {
               <Offcanvas.Body className='d-flex flex-column flex-md-row align-items-center p-4 p-md-0'>
                   <Nav className='justify-content-center justify-content-md-end align-items-center flex-grow-1 gap-4'>
                     <Nav.Item>
-                      <Nav.Link as={Link} to='/' active aria-current='page' onClick={handleClose}>Home</Nav.Link>
+                      <Nav.Link as={NavLink} to='/' aria-current='page' onClick={handleClose}>Home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link as={Link} to='/about-us' onClick={handleClose}>About Us</Nav.Link>
+                      <Nav.Link as={NavLink} to='/about-us' onClick={handleClose}>About Us</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link href='Contact' onClick={handleClose}>Contact</Nav.Link>
+                      <Nav.Link as={NavLink} to='/contact' onClick={handleClose}>Contact</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <div className=" d-md-flex ms-md-3">
