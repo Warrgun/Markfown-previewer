@@ -17,7 +17,7 @@ import {EffectCoverflow, Pagination} from 'swiper/modules';
 const Home = () =>{
     return(
         <>
-            <div className="background-img mb-5" style={{backgroundImage:`url(${img})`}}></div>
+            <div className="background-img mb-5 vw-100" style={{backgroundImage:`url(${img})`}}></div>
             <Container className="flex-grow-1">
                 <Row>
                     <Col md={6}>
@@ -136,7 +136,7 @@ effortlessly.</p>
                     <Button type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0">Sign Up<i className="arrow ms-2"></i></Button>
                 </Container>
             </Container>
-            <div className="d-flex w-100 pb-5">
+            <div className="d-flex vw-100 pb-5">
                 <hr className="w-100 mx-0 hr"/>
             </div>
             <Container className="mt-3 mb-5">

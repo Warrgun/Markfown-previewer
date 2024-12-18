@@ -3,6 +3,7 @@ import {Link, Route, Routes, NavLink} from 'react-router-dom'
 import Home from './Home'
 import Footer from './Footer'
 import NotFound from './NotFound'
+import SignUpModal from './SignUpModal'
 import useThrottle from './custom-hooks/useThrottle'
 import logo from  './assets/logo.png'
 import {Navbar, Button, Container, Nav, Offcanvas} from 'react-bootstrap'
@@ -77,7 +78,7 @@ function App() {
                     </Nav.Item>
                   </Nav>
                   <div className=" d-md-flex ms-md-3">
-                    <Button type='button' className='button-one rounded-0 m-lg-2 me-2 fw-bold'>Sign Up</Button>
+                    <SignUpModal/>
                     <Button type='button' as={Link} to='/app' className='button-two rounded-0 m-lg-2 fw-bold'>Start For Free</Button> 
                   </div>
               </Offcanvas.Body>
