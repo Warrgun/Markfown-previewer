@@ -79,7 +79,7 @@ function App() {
                   </Nav>
                   <div className=" d-md-flex ms-md-3">
                     <SignUpModal/>
-                    <Button type='button' as={Link} to='/app' className='button-two rounded-0 m-lg-2 fw-bold'>Start For Free</Button> 
+                    <Button type='button' as={Link} to='/app' className='button-two rounded-0 m-lg-2 fw-bold input-control'>Start For Free</Button> 
                   </div>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

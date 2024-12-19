@@ -19,7 +19,7 @@ const Footer = () =>{
                                             Provide correct Email.
                                         </Form.Control.Feedback>
                                     </Form.Group>
-                                    <Button type="button" className="button-one rounded-0 fw-bold ms-3">
+                                    <Button type="button" className="button-one rounded-0 fw-bold ms-3 input-control">
                                         Join
                                     </Button>
                                 </Form>

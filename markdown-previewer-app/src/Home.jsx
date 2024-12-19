@@ -2,6 +2,7 @@ import { Container, Button, Image, Row, Col, Card, CardGroup} from "react-bootst
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import {Swiper, SwiperSlide} from 'swiper/react';
+import { Link } from "react-router-dom";
 import img from './assets/main.jpg';
 import pic1 from './assets/pic1.jpg';
 import card1 from './assets/card1.jpg';
@@ -31,8 +32,8 @@ const Home = () =>{
                         <div className="p-2 w-100 my-md-5">
                             <p className=" fs-5">Effortlessly convert your markdown into beautiful HTML with our user-friendly previewer.</p>
                             <div className="d-flex my-5">
-                                <Button type="button" className="button-two rounded-0 fw-bold">Get Started</Button>
-                                <Button type="button" className="button-one rounded-0 ms-4 fw-bold">Learn More</Button>
+                                <Button type="button" as={Link} to="/app" className="button-two rounded-0 fw-bold input-control">Get Started</Button>
+                                <Button type="button" className="button-one rounded-0 ms-4 fw-bold input-control">Learn More</Button>
                             </div>
                         </div>
                     </Col>
@@ -61,8 +62,8 @@ const Home = () =>{
                             </div>
                         </div>
                         <div className=" my-5 text-lg-start">
-                            <Button type="button" className="button-one rounded-0 fw-bold">Learn More</Button>
-                            <Button type="button" className="button-three bg-transparent border-0 rounded-0 fw-bold ms-4">Sign Up<i className="arrow ms-2"></i></Button>
+                            <Button type="button" className="button-one rounded-0 fw-bold input-control">Learn More</Button>
+                            <Button type="button" className="button-three bg-transparent border-0 rounded-0 fw-bold ms-4 input-control">Sign Up<i className="arrow ms-2"></i></Button>
                         </div>
                     </Col>
                 </Row>
@@ -132,8 +133,8 @@ effortlessly.</p>
                         </SwiperSlide>
                     </Swiper>
                 <Container className="mt-5 mb-4">
-                    <Button type="button" className="button-one rounded-0 fw-bold">Learn More</Button>
-                    <Button type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0">Sign Up<i className="arrow ms-2"></i></Button>
+                    <Button type="button" className="button-one rounded-0 fw-bold input-control">Learn More</Button>
+                    <Button type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0 input-control">Sign Up<i className="arrow ms-2"></i></Button>
                 </Container>
             </Container>
             <div className="d-flex vw-100 pb-5">

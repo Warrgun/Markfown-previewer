@@ -110,6 +110,29 @@ transform: scale(1.2);
     box-shadow: 0 0 0 0.2rem hsla(349, 100%, 63%, 0.5) !important; 
 }
 
+.nav-link:focus{
+    box-shadow: none !important;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+    background-color: var(--folly) ;
+    box-shadow: 0 0 0 0.2rem hsla(349, 100%, 63%, 0.5) ; 
+    border-color: var(--folly);
+  }
+
+.custom-checkbox input[type="checkbox"]:focus {
+    box-shadow: 0 0 0 0.2rem hsla(349, 100%, 63%, 0.5); 
+    border-color: rgb(255, 108, 135);
+  }
+
+.modal-content, .custom-checkbox input[type="checkbox"]{
+    border-color: var(--folly) !important;
+}
+
+input[type="checkbox"]:hover{
+    cursor: pointer;
+}
+
 @media (min-width:992px){
     .start-btn:hover{
         color:hsl(299, 100%, 85%) !important;
