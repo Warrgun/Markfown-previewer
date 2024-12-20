@@ -1,51 +1,92 @@
+import React from 'react';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import { useSubmit } from 'react-router-dom';
 
-function SignUpModal() {
-  const [show, setShow] = useState(false);
+function SignUpModal({children}) {
+  const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName:'',
+    email:'',
+    password:'',
+    bool: false
+  });
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleChange = e =>{
+    const {name, value, type, checked} = e.target;
+
+    setFormData(prev => ({...prev, [name]:type === 'checkbox'? checked : value}));
+
+  };
+
+  const handleSubmit = e =>{
+    e.preventDefault();
+
+    console.log('Name', formData.firstName);
+    console.log('Email', formData.email);
+    console.log('Password', formData.password);
+    console.log('Ads', formData.bool);
+
+    setFormData({
+      firstName:'',
+      email:'',
+      password:'',
+      bool: false
+    })
+  }
+
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = () => setShowModal(true);
+  
+  const clonedChildren = React.Children.map(children, (child) => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, {
+        onClick: handleShowModal,
+      });
+    }
+    return child;
+  });
 
   return (
     <>
-      <Button onClick={handleShow} className='button-one rounded-0 m-lg-2 me-2 fw-bold input-control'>Sign Up</Button>
-      <Modal show={show} onHide={handleClose} data-bs-theme="light" className=' text-bg-light  bg-dark-subtle' centered>
+      {clonedChildren}
+      <Modal show={showModal} onHide={handleCloseModal}  className=' text-bg-light  bg-dark-subtle' centered>
         <Modal.Header closeButton>
           <Modal.Title>Sign Up</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <Form className=''>
-            <Form.Group controlId='formName'>
+        <Form onSubmit={handleSubmit}>
+          <Modal.Body>
+            <Form.Group>
               <Form.Label>Name</Form.Label>
-              <Form.Control type='text' name='name' className='input-control rounded-0 bg-transparent' style={{border:"solid 2px var(--folly)"}} placeholder='Enter first name' autoFocus required/>
+              <Form.Control type='text' name='firstName' className=' input-border rounded-0 bg-transparent' placeholder='Enter first name' value={formData.firstName} onChange={handleChange} autoFocus required/>
             </Form.Group>
-            <Form.Group controlId="formEmail">
+            <Form.Group>
               <Form.Label >Email address</Form.Label>
-              <Form.Control className="input-control rounded-0 bg-transparent" style={{border:"solid 2px var(--folly)"}} type="emial" name="email" placeholder="Enter email adress" required/>
+              <Form.Control className=" input-border rounded-0 bg-transparent" type="emial" name="email" placeholder="Enter email adress" value={formData.email} onChange={handleChange} required/>
               <Form.Control.Feedback type="invalid">
                   Provide correct Email.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3">
               <Form.Label>Password</Form.Label>
-              <Form.Control className="input-control rounded-0 bg-transparent" type="password" style={{border:"solid 2px var(--folly)"}} placeholder="Password" />
+              <Form.Control className=" input-border rounded-0 bg-transparent" type="password" name='password' placeholder="Password" value={formData.password} onChange={handleChange} required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" className='custom-checkbox' label="Check me out" />
+              <Form.Check type="checkbox" name='bool' className='custom-checkbox' label="Check if you want to receive marketing ads." checked={formData.bool} onChange={handleChange} />
             </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button className='button-one rounded-0 m-lg-2 me-2 fw-bold input-control' onClick={handleClose}>
-            Close
-          </Button>
-          <Button className='button-two rounded-0 m-lg-2 fw-bold input-control' onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+          
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className='button-one rounded-0 m-lg-2 me-2 fw-bold  input-focus' onClick={handleCloseModal}>
+              Close
+            </Button>
+            <Button type='submit' className='button-two rounded-0 m-lg-2 fw-bold input-focus'>
+              Sign Up
+            </Button>
+          </Modal.Footer>
+        </Form>
       </Modal>
     </>
   );

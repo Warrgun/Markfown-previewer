@@ -57,7 +57,7 @@ function App() {
       <div className="d-flex flex-column min-vh-100">
         <Navbar ref={navContainer} fixed='top' expand='md' className='navbar-dark navbar-color border-bottom-color w-100'>
           <Container fluid>
-            <Navbar.Brand href='/'>
+            <Navbar.Brand as={Link} to={'/'}>
               <img alt='Logo' src={logo} style={{width:"2.9em"}}/>
             </Navbar.Brand>
             <Navbar.Toggle onClick={handleShow} aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation' className='border-0 shadow-none'/>
@@ -78,8 +78,10 @@ function App() {
                     </Nav.Item>
                   </Nav>
                   <div className=" d-md-flex ms-md-3">
-                    <SignUpModal/>
-                    <Button type='button' as={Link} to='/app' className='button-two rounded-0 m-lg-2 fw-bold input-control'>Start For Free</Button> 
+                    <SignUpModal>
+                      <Button  className='button-one rounded-0 m-lg-2 me-2 fw-bold input-focus'>Sign Up</Button>
+                    </SignUpModal>
+                    <Button type='button' as={Link} to='/app' onClick={handleClose} className='button-two rounded-0 m-lg-2 fw-bold input-focus'>Start For Free</Button> 
                   </div>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
