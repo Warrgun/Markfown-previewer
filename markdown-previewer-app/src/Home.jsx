@@ -4,6 +4,7 @@ import {faStar} from "@fortawesome/free-solid-svg-icons";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import { Link } from "react-router-dom";
 import SignUpModal from "./SignUpModal";
+import LearnMoreModal from "./LearnMoreModal";
 import img from './assets/main.jpg';
 import pic1 from './assets/pic1.jpg';
 import card1 from './assets/card1.jpg';
@@ -15,8 +16,18 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import {EffectCoverflow, Pagination} from 'swiper/modules';
+import { useState } from "react";
 
 const Home = () =>{
+    const [showModal, setShowModal] = useState(false);
+    const [fullscreen, setFullscreen] = useState(true)
+
+    const handleModalHide = () => setShowModal(false);
+    const handleModalShow = () =>{
+        setFullscreen('md-down');
+        setShowModal(true);  
+    };
+
     return(
         <>
             <div className="background-img mb-5 vw-100" style={{backgroundImage:`url(${img})`}}></div>
@@ -34,7 +45,7 @@ const Home = () =>{
                             <p className=" fs-5">Effortlessly convert your markdown into beautiful HTML with our user-friendly previewer.</p>
                             <div className="d-flex my-5">
                                 <Button type="button" as={Link} to="/app" className="button-two rounded-0 fw-bold  input-focus">Get Started</Button>
-                                <Button type="button" className="button-one rounded-0 ms-4 fw-bold  input-focus">Learn More</Button>
+                                <Button type="button" className="button-one rounded-0 ms-4 fw-bold  input-focus" onClick={handleModalShow}>Learn More</Button>
                             </div>
                         </div>
                     </Col>
@@ -63,7 +74,7 @@ const Home = () =>{
                             </div>
                         </div>
                         <div className=" my-5 text-lg-start">
-                            <Button type="button" className="button-one rounded-0 fw-bold  input-focus">Learn More</Button>
+                            <Button type="button" className="button-one rounded-0 fw-bold  input-focus" onClick={handleModalShow}>Learn More</Button>
                             <SignUpModal>
                                 <Button type="button" className="button-three bg-transparent border-0 rounded-0 fw-bold ms-4  input-focus">Sign Up<i className="arrow ms-2"></i></Button>
                             </SignUpModal>
@@ -136,7 +147,7 @@ effortlessly.</p>
                         </SwiperSlide>
                     </Swiper>
                 <Container className="mt-5 mb-4">
-                    <Button type="button" className="button-one rounded-0 fw-bold input-focus">Learn More</Button>
+                    <Button type="button" className="button-one rounded-0 fw-bold input-focus" onClick={handleModalShow}>Learn More</Button>
                     <SignUpModal>
                         <Button type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0 input-focus">Sign Up<i className="arrow ms-2"></i></Button>             
                     </SignUpModal>
@@ -177,6 +188,7 @@ effortlessly.</p>
                     </Col>
                 </Row>
             </Container>
+            <LearnMoreModal show={showModal} onHide={handleModalHide} fullscreen={fullscreen}/>
         </>
         
     )

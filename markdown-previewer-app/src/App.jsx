@@ -13,9 +13,7 @@ function App() {
   const [show, setShow] = useState(false);
   const lastScrollPosition = useRef(0);
   const navContainer = useRef(null);
-  const contactRef = useRef(null);
 
-  const handleScrollContact = () => contactRef.current.scrollIntoView();
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   const handleScroll = useCallback(() =>{
