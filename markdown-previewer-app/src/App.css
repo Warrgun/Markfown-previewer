@@ -92,8 +92,8 @@ transform: scale(1.2);
 
 
 .hr{
-    border: 0;
-    border-top: 2px solid var(--folly) !important;
+    border-top:2px solid var(--folly) !important;
+    border-bottom: 2px solid var(--folly) !important;
     opacity: 1 !important;
 }
 

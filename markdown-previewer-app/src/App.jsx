@@ -4,6 +4,7 @@ import Home from './Home'
 import Footer from './Footer'
 import NotFound from './NotFound'
 import SignUpModal from './SignUpModal'
+import AboutUs from './AboutUs'
 import useThrottle from './custom-hooks/useThrottle'
 import logo from  './assets/logo.png'
 import {Navbar, Button, Container, Nav, Offcanvas} from 'react-bootstrap'
@@ -89,7 +90,7 @@ function App() {
         </Navbar>
         <Routes>
           <Route path='/' element={<Home handleShowModal={handleShowModal}/>}/>
-          <Route path='/about-us' element={<h1>Work in progress</h1>}/>
+          <Route path='/about-us' element={<AboutUs />}/>
           <Route path='/app' element={<h1>Work in progress</h1>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>

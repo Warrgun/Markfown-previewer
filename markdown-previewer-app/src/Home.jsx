@@ -20,8 +20,7 @@ import { useState } from "react";
 
 const Home = ({handleShowModal}) =>{
     const [showModal, setShowModal] = useState(false);
-    const [fullscreen, setFullscreen] = useState(true)
-    console.log(handleShowModal)
+    const [fullscreen, setFullscreen] = useState(true);
 
     const handleModalHide = () => setShowModal(false);
     const handleModalShow = () =>{
@@ -82,71 +81,74 @@ const Home = ({handleShowModal}) =>{
                         </div>
                     </Col>
                 </Row>
-                <Row className=" pt-md-5">
-                    <Col md={6}>
-                        <p className=" d-block d-none d-lg-block">Simplified</p>
-                        <h2>Expirience the Power of</h2>
-                        <h2 className=" mb-4 mb-md-0">Mardown Previewer</h2>
-                    </Col>
-                    <Col md={6}>
-                        <p className="fs-5 p-0">Our markdown previewer offers a range of key features to enhance your
-writing experience. With live preview, syntax highlighting, and export
-options, you can create beautiful and professional-looking documents
-effortlessly.</p>
-                    </Col>  
-                </Row>
+                
             </Container>
-            <Container fluid className="d-flex flex-column w-100 mb-5">
-                    <Swiper
-                        effect={'coverflow'} 
-                        grabCursor={true}
-                        centeredSlides={true}
-                        slidesPerView={"auto"}
-                        initialSlide={1}
-                        loop={false}
-                        coverflowEffect={{
-                            rotate:50,
-                            stretch:0,
-                            depth: 100,
-                            modifier:1,
-                            slideShadows:true
-                        }}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        modules={[EffectCoverflow, Pagination]}
-                        className="mySwiper text-center my-3 p-5"
-                        data-bs-theme="dark"
-                    >
-                        <SwiperSlide>
-                                <div className="card">
-                                <img src={card1} className="card-img-top" alt="card1"/>
-                                    <div className="card-body">
-                                        <h3 className="card-title">Live Preview</h3>
-                                        <p className="card-text">See your changes in real-time as you type.</p>
-                                    </div>
-                                </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                                <div className="card">
-                                <img src={card2} className="card-img-top" alt="card2"/>
-                                    <div className="card-body">
-                                        <h3 className="card-title">Syntax Highlighting</h3>
-                                        <p className="card-text">Highlight and differentiate your code for 
-                                        better readability.</p>
-                                    </div>
-                                </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
+            <Container fluid className="d-flex flex-column w-100 pb-5 mb-5 bg-dark-subtle hr" >
+                <Container>
+                    <Row className=" pt-5">
+                        <Col md={6}>
+                            <p className=" d-block d-none d-lg-block">Simplified</p>
+                            <h2>Expirience the Power of</h2>
+                            <h2 className=" mb-4 mb-md-0">Mardown Previewer</h2>
+                        </Col>
+                        <Col md={6}>
+                            <p className="fs-5 p-0">Our markdown previewer offers a range of key features to enhance your
+                            writing experience. With live preview, syntax highlighting, and export
+                            options, you can create beautiful and professional-looking documents
+                            effortlessly.</p>
+                        </Col>  
+                    </Row>
+                </Container>
+                <Swiper
+                    effect={'coverflow'} 
+                    grabCursor={true}
+                    centeredSlides={true}
+                    slidesPerView={"auto"}
+                    initialSlide={1}
+                    loop={false}
+                    coverflowEffect={{
+                        rotate:50,
+                        stretch:0,
+                        depth: 100,
+                        modifier:1,
+                        slideShadows:true
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[EffectCoverflow, Pagination]}
+                    className="mySwiper text-center my-3 p-5"
+                    data-bs-theme="dark"
+                >
+                    <SwiperSlide>
                             <div className="card">
-                            <img src={card3} className="card-img-top" alt="card3"/>
+                            <img src={card1} className="card-img-top" alt="card1"/>
                                 <div className="card-body">
-                                    <h3 className="card-title">Export Options</h3>
-                                    <p className="card-text">Save or share your documents in various formats.</p>
+                                    <h3 className="card-title">Live Preview</h3>
+                                    <p className="card-text">See your changes in real-time as you type.</p>
                                 </div>
                             </div>
-                        </SwiperSlide>
-                    </Swiper>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                            <div className="card">
+                            <img src={card2} className="card-img-top" alt="card2"/>
+                                <div className="card-body">
+                                    <h3 className="card-title">Syntax Highlighting</h3>
+                                    <p className="card-text">Highlight and differentiate your code for 
+                                    better readability.</p>
+                                </div>
+                            </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="card">
+                        <img src={card3} className="card-img-top" alt="card3"/>
+                            <div className="card-body">
+                                <h3 className="card-title">Export Options</h3>
+                                <p className="card-text">Save or share your documents in various formats.</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
                 <Container className="mt-5 mb-4">
                     <Button type="button" className="button-one rounded-0 fw-bold input-focus" onClick={handleModalShow}>Learn More</Button>
                         <Button onClick={handleShowModal} type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0 input-focus">
@@ -154,10 +156,7 @@ effortlessly.</p>
                         </Button>             
                 </Container>
             </Container>
-            <div className="d-flex vw-100 pb-5">
-                <hr className="w-100 mx-0 hr"/>
-            </div>
-            <Container className="mt-3 mb-5">
+            <Container className="mt-3 mb-5 pt-sm-5 pb-sm-5">
                 <Row>
                     <Col xs={12} className=" text-center">
                         <div className="w-100 mb-3 fs-5">

@@ -2,10 +2,12 @@ import { Container, Row, Col } from "react-bootstrap"
 
 const NotFound = () =>{
     return(
-        <Container className="flex-grow-1">
-            <div className="d-flex align-items-center justify-content-center">
-                <h1>Not Found</h1>
-            </div>
+        <Container className="flex-grow-1 align-content-center">
+            <Row>
+                <Col xs={12} className=" text-center">
+                    <h1>Not Found</h1>
+                </Col>
+            </Row>
         </Container>
     )
 }
