@@ -149,11 +149,13 @@ const Home = ({handleShowModal}) =>{
                         </div>
                     </SwiperSlide>
                 </Swiper>
-                <Container className="mt-5 mb-4">
-                    <Button type="button" className="button-one rounded-0 fw-bold input-focus" onClick={handleModalShow}>Learn More</Button>
-                        <Button onClick={handleShowModal} type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0 input-focus">
-                            Sign Up<i className="arrow ms-2"></i>
-                        </Button>             
+                <Container className="mt-5">
+                    <Button type="button" className="button-two rounded-0 fw-bold input-focus" onClick={handleModalShow}>
+                        Learn More
+                    </Button>
+                    <Button onClick={handleShowModal} type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0 input-focus">
+                        Sign Up<i className="arrow ms-2"></i>
+                    </Button>             
                 </Container>
             </Container>
             <Container className="mt-3 mb-5 pt-sm-5 pb-sm-5">
