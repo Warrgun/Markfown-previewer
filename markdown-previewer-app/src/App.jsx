@@ -11,8 +11,12 @@ import './App.css'
 
 function App() {
   const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const lastScrollPosition = useRef(0);
   const navContainer = useRef(null);
+
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = () => setShowModal(true);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -76,9 +80,7 @@ function App() {
                     </Nav.Item>
                   </Nav>
                   <div className=" d-md-flex ms-md-3">
-                    <SignUpModal>
-                      <Button  className='button-one rounded-0 m-lg-2 me-2 fw-bold input-focus'>Sign Up</Button>
-                    </SignUpModal>
+                    <Button onClick={handleShowModal}  className='button-one rounded-0 m-lg-2 me-2 fw-bold input-focus'>Sign Up</Button>
                     <Button type='button' as={Link} to='/app' onClick={handleClose} className='button-two rounded-0 m-lg-2 fw-bold input-focus'>Start For Free</Button> 
                   </div>
               </Offcanvas.Body>
@@ -86,14 +88,14 @@ function App() {
           </Container>
         </Navbar>
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/' element={<Home handleShowModal={handleShowModal}/>}/>
           <Route path='/about-us' element={<h1>Work in progress</h1>}/>
           <Route path='/app' element={<h1>Work in progress</h1>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
         <Footer/>
       </div>
-      
+      <SignUpModal show={showModal} onHide={handleCloseModal} />
     </>
   )
 }

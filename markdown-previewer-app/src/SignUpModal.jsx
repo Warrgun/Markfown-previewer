@@ -3,10 +3,9 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { useSubmit } from 'react-router-dom';
 
-function SignUpModal({children}) {
-  const [showModal, setShowModal] = useState(false);
+
+function SignUpModal(props) {
   const [formData, setFormData] = useState({
     firstName:'',
     email:'',
@@ -37,22 +36,9 @@ function SignUpModal({children}) {
     })
   }
 
-  const handleCloseModal = () => setShowModal(false);
-  const handleShowModal = () => setShowModal(true);
-  
-  const clonedChildren = React.Children.map(children, (child) => {
-    if (React.isValidElement(child)) {
-      return React.cloneElement(child, {
-        onClick: handleShowModal,
-      });
-    }
-    return child;
-  });
-
   return (
     <>
-      {clonedChildren}
-      <Modal show={showModal} onHide={handleCloseModal}  className=' text-bg-light  bg-dark-subtle' centered>
+      <Modal {...props} className=' text-bg-light  bg-dark-subtle' centered>
         <Modal.Header closeButton>
           <Modal.Title>Sign Up</Modal.Title>
         </Modal.Header>
@@ -76,10 +62,9 @@ function SignUpModal({children}) {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" name='bool' className='custom-checkbox' label="Check if you want to receive marketing ads." checked={formData.bool} onChange={handleChange} />
             </Form.Group>
-          
           </Modal.Body>
           <Modal.Footer>
-            <Button className='button-one rounded-0 m-lg-2 me-2 fw-bold  input-focus' onClick={handleCloseModal}>
+            <Button className='button-one rounded-0 m-lg-2 me-2 fw-bold  input-focus' onClick={props.onHide}>
               Close
             </Button>
             <Button type='submit' className='button-two rounded-0 m-lg-2 fw-bold input-focus'>

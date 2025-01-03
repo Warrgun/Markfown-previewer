@@ -18,9 +18,10 @@ import 'swiper/css/pagination';
 import {EffectCoverflow, Pagination} from 'swiper/modules';
 import { useState } from "react";
 
-const Home = () =>{
+const Home = ({handleShowModal}) =>{
     const [showModal, setShowModal] = useState(false);
     const [fullscreen, setFullscreen] = useState(true)
+    console.log(handleShowModal)
 
     const handleModalHide = () => setShowModal(false);
     const handleModalShow = () =>{
@@ -75,9 +76,9 @@ const Home = () =>{
                         </div>
                         <div className=" my-5 text-lg-start">
                             <Button type="button" className="button-one rounded-0 fw-bold  input-focus" onClick={handleModalShow}>Learn More</Button>
-                            <SignUpModal>
-                                <Button type="button" className="button-three bg-transparent border-0 rounded-0 fw-bold ms-4  input-focus">Sign Up<i className="arrow ms-2"></i></Button>
-                            </SignUpModal>
+                            <Button onClick={handleShowModal} type="button" className="button-three bg-transparent border-0 rounded-0 fw-bold ms-4  input-focus">
+                                Sign Up<i className="arrow ms-2"></i>
+                            </Button>
                         </div>
                     </Col>
                 </Row>
@@ -148,9 +149,9 @@ effortlessly.</p>
                     </Swiper>
                 <Container className="mt-5 mb-4">
                     <Button type="button" className="button-one rounded-0 fw-bold input-focus" onClick={handleModalShow}>Learn More</Button>
-                    <SignUpModal>
-                        <Button type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0 input-focus">Sign Up<i className="arrow ms-2"></i></Button>             
-                    </SignUpModal>
+                        <Button onClick={handleShowModal} type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0 input-focus">
+                            Sign Up<i className="arrow ms-2"></i>
+                        </Button>             
                 </Container>
             </Container>
             <div className="d-flex vw-100 pb-5">

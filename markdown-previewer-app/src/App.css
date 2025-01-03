@@ -26,7 +26,7 @@ width: 100%;
     width: 12px;
     height: 12px;
     opacity: 0.8;
-  }
+}
 .swiper-pagination-bullet-active {
 background-color: var(--folly);
 transform: scale(1.2); 
@@ -156,6 +156,13 @@ input[type="checkbox"]:hover{
         color: var(--folly) !important;
     }
     .button-three:hover .arrow{
+        margin-left: 1.5em !important;
+    }
+}
+
+@media (max-width:991px){
+    .button-three:active .arrow{
+        transition-duration: 0ms;
         margin-left: 1.5em !important;
     }
 }
