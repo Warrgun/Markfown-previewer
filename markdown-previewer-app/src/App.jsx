@@ -4,9 +4,10 @@ import Home from './Home'
 import Footer from './Footer'
 import NotFound from './NotFound'
 import SignUpModal from './SignUpModal'
-import AboutUs from './AboutUs'
+import AboutUs from './AboutUs/AboutUs'
 import useThrottle from './custom-hooks/useThrottle'
 import logo from  './assets/logo.png'
+import ScrollToTop from './ScrollToTop'
 import {Navbar, Button, Container, Nav, Offcanvas} from 'react-bootstrap'
 import './App.css'
 
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <> 
+      <ScrollToTop/>
       <div className="d-flex flex-column min-vh-100">
         <Navbar ref={navContainer} fixed='top' expand='md' className='navbar-dark navbar-color border-bottom-color w-100'>
           <Container fluid>
