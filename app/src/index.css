@@ -1,0 +1,17 @@
+:root{
+  --folly: hsla(349, 100%, 63%, 1);
+  --black: hsla(60, 50%, 1%, 1);
+  --pearl: hsla(45, 32%, 77%, 1);
+  --khaki: hsla(43, 12%, 60%, 1);
+  --davys-gray: hsla(0, 4%, 34%, 1);
+}
+
+body, html{
+  width: 100%;
+}
+
+body{
+  overflow-x: hidden;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
