@@ -1,0 +1,10 @@
+@media (max-width: 991px){
+    .markdown-row{
+        height: 100% !important;
+    }
+}
+@media (max-width:767px) {
+    .markdown-row{
+        height:auto !important;
+    }
+}
