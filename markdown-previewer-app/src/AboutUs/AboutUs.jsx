@@ -5,8 +5,8 @@ import './aboutUs-custom.css'
 
 const AboutUs = () =>{
     return(
-        <Container fluid className="flex-grow-1 w-100 vh-100">
-            <div className="position-relative w-100 h-100">
+        <Container fluid className="flex-grow-1 w-100 pt-5 about-container">
+            <div className="w-100 h-100 position-relative about-flex">
                 <div className="about-decorations circle position-absolute"></div>
                 <div className="about-decorations striped-circle  position-absolute"></div>
                 <div className="about-decorations profile-circle  position-absolute">
@@ -19,9 +19,9 @@ const AboutUs = () =>{
                 <div className="about-rect position-absolute"></div>
                 <div className="about-rect about-rect-shadow position-absolute"></div>
                 <div className="about-rect-striped position-absolute"></div>
-                <Card className="about-card position-absolute  border-0 p-5" style={{ width: '50rem' }}>
+                <Card className="about-card mx-auto border-0 p-2 p-sm-5 my-5 my-sm-0">
                     <Card.Body>
-                        <Card.Title className="pt-2" style={{fontSize:"5rem", fontFamily:"Impact", color:"black"}}>ABOUT</Card.Title>
+                        <Card.Title className="pt-md-2 about-title" >ABOUT</Card.Title>
                         <Row>
                             <Col xs={12} md={6}>
                                 <Card.Text>
