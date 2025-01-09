@@ -25,9 +25,18 @@ Go back to [Landing page](https://www.youtube.com)
     );
 
   const handleTabPress = (e) =>{
-    if(e.key = 'Tab'){
-      e.preventdefault();
-      setEditor('\t');
+    if(e.key === 'Tab'){
+      e.preventDefault();
+
+      const currentPosition= e.target.selectionStart;
+      const textBefore  = editor.substring(0,currentPosition);
+      const textAfter = editor.substring(currentPosition);
+
+      setEditor(textBefore+'\t'+textAfter);
+
+      setTimeout(()=>{
+        e.target.selectionStart = e.target.selectionEnd = currentPosition+1;
+      },0)
     }
   }
 
@@ -38,11 +47,11 @@ Go back to [Landing page](https://www.youtube.com)
   return (
     <>
       <Container fluid className='w-100 vh-100 align-content-center bg-dark text-bg-light' >
-        <Row className='md-lg-auto h-75 markdown-row'>
-          <Col xs={12} md={6} lg={{ span: 5, offset: 1 }} xl={{ span: 4, offset: 2 }} className=' bg-dark-subtle p-0 h-100 rounded-start-2'>
+        <Row className=' markdown-row'>
+          <Col xs={12} md={6} lg={{ span: 5, offset: 1 }} xl={{ span: 4, offset: 2 }} className=' bg-dark-subtle p-0 h-100 text-area'>
             <FormControl as='textarea' id='editor' value={editor} onChange={handleChange} onKeyDown={handleTabPress} className='h-100'/>
           </Col>
-          <Col xs={12} md={6} lg={{ span: 5, offset: 0 }} xl={{ span: 4, offset: 0 }} className='bg-dark-subtle h-100 overflow-auto rounded-end-2'>
+          <Col xs={12} md={6} lg={{ span: 5, offset: 0 }} xl={{ span: 4, offset: 0 }} className='bg-dark-subtle overflow-auto h-100 markdown-prev'>
             <Markdown markdown={editor}/>
           </Col>
         </Row>
