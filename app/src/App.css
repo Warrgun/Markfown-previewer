@@ -1,15 +1,39 @@
-
-
 .markdown-row{
     height: 75%;
 }
 
 .text-area{
-    border-radius: 10px 0% 0% 10px;
+    border-radius: 10% 30% 5% 33%;
+    padding: 2em 0em 3em 4em;
+    background-color: #c45baa;
+}
+
+.form-control{
+    border-radius: 10% 0 0 33%;
+    color: rgba(255, 255, 255, 0.75);
+    background-color:#622c62 ;
+    border-left: 0.5em solid #532553;
+    border-top: 0.5em solid #3a1a3a;
+    border-bottom: 0.5em solid #532553;
+}
+
+textarea.form-control:focus{
+    color: rgba(255, 255, 255, 0.75);;
+    background-color: #7d387d;
+    border-color: #3a1a3a;
+    box-shadow: none;
 }
 
 .markdown-prev{
+    border: 2em solid black;
+    background-color: #c45baa;
+}
+
+.marked{
     border-radius: 0 10px 10px 0;
+    border-top: 0.5em solid #532553;
+    border-right: 0.5em solid #532553;
+    border-bottom: 0.5em solid #3a1a3a;
 }
 
 @media (max-width: 991px){

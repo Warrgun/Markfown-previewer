@@ -48,10 +48,10 @@ Go back to [Landing page](https://www.youtube.com)
     <>
       <Container fluid className='w-100 vh-100 align-content-center bg-dark text-bg-light' >
         <Row className=' markdown-row'>
-          <Col xs={12} md={6} lg={{ span: 5, offset: 1 }} xl={{ span: 4, offset: 2 }} className=' bg-dark-subtle p-0 h-100 text-area'>
+          <Col xs={12} md={6} lg={{ span: 5, offset: 1 }} xl={{ span: 4, offset: 2 }} className='h-100 text-area'>
             <FormControl as='textarea' id='editor' value={editor} onChange={handleChange} onKeyDown={handleTabPress} className='h-100'/>
           </Col>
-          <Col xs={12} md={6} lg={{ span: 5, offset: 0 }} xl={{ span: 4, offset: 0 }} className='bg-dark-subtle overflow-auto h-100 markdown-prev'>
+          <Col xs={12} md={6} lg={{ span: 5, offset: 0 }} xl={{ span: 4, offset: 0 }} className='bg-light overflow-auto h-100 markdown-prev'>
             <Markdown markdown={editor}/>
           </Col>
         </Row>

@@ -3,7 +3,7 @@ import Marked from "marked-react";
 
 const Markdown = ({markdown}) =>{
     return(
-        <div id="preview">
+        <div id="preview" className=" marked">
             <Marked 
                 options={{
                     gfm:true,
