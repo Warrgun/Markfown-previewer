@@ -3,18 +3,21 @@ import Marked from "marked-react";
 
 const Markdown = ({markdown}) =>{
     return(
-        <div id="preview" className=" marked">
-            <Marked 
-                options={{
-                    gfm:true,
-                    breaks: true,
-                    headerIds: false,
-                    mangle: false,
-                }}
-            >
-                {markdown}
-            </Marked>
+        <div className=" bg-light mt-auto overflow-auto h-100 px-2 rounded-2 scrollbar">
+            <div id="preview">
+                <Marked 
+                    options={{
+                        gfm:true,
+                        breaks: true,
+                        headerIds: false,
+                        mangle: false,
+                    }}
+                >
+                    {markdown}
+                </Marked>
+            </div>
         </div>
+
     );
 }
 

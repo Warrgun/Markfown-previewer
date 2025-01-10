@@ -1,10 +1,9 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {Button, Col, Container, FormControl, Row} from 'react-bootstrap';
 import Markdown from './Markdown';
 import './App.css'
 
-function App() {
+function App(){
   const [editor, setEditor] = useState(
 `# Markdown Previewer
 ## Make websites easier then ever!
@@ -46,12 +45,12 @@ Go back to [Landing page](https://www.youtube.com)
 
   return (
     <>
-      <Container fluid className='w-100 vh-100 align-content-center bg-dark text-bg-light' >
+      <Container fluid className='w-100 vh-100 align-content-center' >
         <Row className=' markdown-row'>
-          <Col xs={12} md={6} lg={{ span: 5, offset: 1 }} xl={{ span: 4, offset: 2 }} className='h-100 text-area'>
-            <FormControl as='textarea' id='editor' value={editor} onChange={handleChange} onKeyDown={handleTabPress} className='h-100'/>
+          <Col xs={12} md={6} lg={{ span: 5, offset: 1 }} xl={{ span: 4, offset: 2 }} className='h-100 text-area pe-2 pe-lg-3 ps-0 '>
+            <FormControl as='textarea' id='editor' value={editor} onChange={handleChange} onKeyDown={handleTabPress} className='h-100 scrollbar text-light fw-bold border-1 border-light'/>
           </Col>
-          <Col xs={12} md={6} lg={{ span: 5, offset: 0 }} xl={{ span: 4, offset: 0 }} className='bg-light overflow-auto h-100 markdown-prev'>
+          <Col xs={12} md={6} lg={{ span: 5, offset: 0 }} xl={{ span: 4, offset: 0 }} className=' bg-light p-2 h-100 markdown-prev rounded'>
             <Markdown markdown={editor}/>
           </Col>
         </Row>
@@ -59,5 +58,6 @@ Go back to [Landing page](https://www.youtube.com)
     </>
   )
 }
+
 
 export default App

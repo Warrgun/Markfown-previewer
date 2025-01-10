@@ -1,58 +1,88 @@
-.markdown-row{
+@property --background {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+
+.markdown-row {
     height: 75%;
 }
 
-.text-area{
-    border-radius: 10% 30% 5% 33%;
-    padding: 2em 0em 3em 4em;
-    background-color: #c45baa;
+textarea {
+    resize: none;
+    overflow: auto;
+    transition: --background 500ms ease-in-out;
 }
 
-.form-control{
-    border-radius: 10% 0 0 33%;
-    color: rgba(255, 255, 255, 0.75);
-    background-color:#622c62 ;
-    border-left: 0.5em solid #532553;
-    border-top: 0.5em solid #3a1a3a;
-    border-bottom: 0.5em solid #532553;
+textarea:focus {
+    --background: hsla(0, 0%, 0%, 0.1);
 }
 
-textarea.form-control:focus{
-    color: rgba(255, 255, 255, 0.75);;
-    background-color: #7d387d;
-    border-color: #3a1a3a;
-    box-shadow: none;
+.form-control {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    transition-duration: 250ms;
 }
 
-.markdown-prev{
-    border: 2em solid black;
-    background-color: #c45baa;
+.form-control:focus {
+    background-color: transparent;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
 }
 
-.marked{
-    border-radius: 0 10px 10px 0;
-    border-top: 0.5em solid #532553;
-    border-right: 0.5em solid #532553;
-    border-bottom: 0.5em solid #3a1a3a;
+.scrollbar::-webkit-scrollbar {
+    width: 5px;
 }
 
-@media (max-width: 991px){
-    .markdown-row{
+.scrollbar::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: rgb(129, 0, 153);
+    background: linear-gradient(180deg, rgba(129, 0, 153, 1) 0%, rgba(255, 155, 242, 1) 100%, rgba(255, 0, 247, 1) 100%, rgba(238, 212, 158, 1) 100%);
+}
+
+@media (max-width: 991px) {
+    .markdown-row {
         height: 95%;
         margin: 0 0.5em 0 0.5em;
     }
 }
-@media (max-width:767px) {
-    .markdown-row{
+
+@media (min-width: 768px){
+    textarea:hover{
+        --background: hsla(0, 0%, 0%, 0.1);
+    }
+}
+
+@media (max-width: 767px) {
+    .form-control {
+        transition-duration: 0ms;
+    }
+
+    .markdown-row {
         height: 100%;
         margin: 0;
     }
-    .text-area, .markdown-prev{
+
+    .text-area,
+    .markdown-prev {
         height: 50% !important;
-        border-radius: 0;
-    }
-    .container-fluid{
-        padding: 0;
     }
 
+    .markdown-prev {
+        background-color: transparent !important;
+        padding: 0.25em 0.5em 0.5em 0.5em !important;
+    }
+
+    .text-area {
+        padding: 0.5em 0.5em 0.25em 0.5em !important;
+    }
+
+    .container-fluid {
+        padding: 0;
+    }
 }
