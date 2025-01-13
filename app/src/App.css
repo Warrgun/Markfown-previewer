@@ -121,7 +121,7 @@ textarea:focus {
         padding: 0.5em 0.5em 0.25em 0.5em !important;
     }
     textarea{
-        font-size: clamp(0.5rem, 3vw + 0.1rem, 1rem) !important;
+        font-size: clamp(0.6rem, 3vw + 0.1rem, 1rem) !important;
     }
 
     .container-fluid {
