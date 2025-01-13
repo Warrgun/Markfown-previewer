@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import {Button, Col, Container, FormControl, Row} from 'react-bootstrap';
 import Markdown from './Markdown';
+import NavbarComponent from './NavbarComponent';
 import './App.css'
 
 function App(){
@@ -45,8 +46,9 @@ Go back to the [Landing page](https://www.youtube.com)
 
   return (
     <>
-      <Container fluid className='w-100 vh-100 align-content-center' >
-        <Row className=' markdown-row'>
+      <Container fluid className='d-flex flex-column justify-content-lg-center w-100 h-100' >
+      <NavbarComponent/>
+        <Row className=' markdown-row flex-grow-1 flex-lg-grow-0 mb-2 mx-2 mb-md-4 mx-lg-0 mb-lg-0'>
           <Col xs={12} md={6} lg={{ span: 5, offset: 1 }} xl={{ span: 4, offset: 2 }} className='h-100 text-area pe-2 pe-lg-3 ps-0 '>
             <FormControl as='textarea' id='editor' value={editor} onChange={handleChange} onKeyDown={handleTabPress} className='h-100 scrollbar text-light fw-bold border-1 border-light'/>
           </Col>
