@@ -51,11 +51,20 @@ textarea:focus {
     border: none;
 }
 
+.navbar-toggler:focus{
+   box-shadow: none;
+}
+
+.navbar-toggler:active{
+    box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.5);
+}
+
 @media (min-width: 992px){
     .navbar{
         top: 0;
         left: 0;
-        position: absolute;
+        position: fixed;
+        z-index: 1000;
     }
 }
 
@@ -63,6 +72,25 @@ textarea:focus {
     .navbar{
         height: clamp(3em, 10%, 4em);
     }
+    .offcanvas-header .btn-close{
+        margin-left: 0;
+    }
+    
+    .offcanvas-header .btn-close:focus{
+        box-shadow: 0 0 0px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    .offcanvas-right{
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        color: #333;
+        font-weight: bold;
+      }
+      .nav-link{
+        transition-duration: 0ms;
+      }
+      .nav-link.active{
+        color: rgb(0, 0, 0) !important;
+      }
 }
 
 @media (min-width: 768px){

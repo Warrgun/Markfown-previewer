@@ -1,32 +1,30 @@
 import React, {useState} from "react";
-import Button from 'react-bootstrap/Button';
+import ExportButton from "./ExportButton";
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-const NavbarComponent = ()=>{
+const NavbarComponent = ({exportFile})=>{
     return(
         <Navbar expand='lg'className="w-100">
           <Container>
-            <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
+            <div className="d-block d-lg-none">
+              <ExportButton exportFile={exportFile}/>
+            </div>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`}/>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-lg`}
               aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
               placement="end"
+              className='d-lg-flex justify-content-lg-center align-items-lg-center offcanvas-right '
             >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                  Offcanvas
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
+              <Offcanvas.Header className="pb-0" closeButton/>
+              <Offcanvas.Body className=" text-center align-content-center pt-0">
+                <Nav className="justify-content-end flex-grow-1 mb-5">
                   <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
+                  <Nav.Link href="#action2">About</Nav.Link>
+                  <Nav.Link href="#action3">Contact</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
