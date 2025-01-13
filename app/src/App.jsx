@@ -3,6 +3,7 @@ import {Button, Col, Container, FormControl, Row} from 'react-bootstrap';
 import Markdown from './Markdown';
 import NavbarComponent from './NavbarComponent';
 import './App.css'
+import ExportButton from './ExportButton';
 
 function App(){
   const [editor, setEditor] = useState(
@@ -54,6 +55,9 @@ Go back to the [Landing page](https://www.youtube.com)
           </Col>
           <Col xs={12} md={6} lg={{ span: 5, offset: 0 }} xl={{ span: 4, offset: 0 }} className=' bg-light p-2 h-100 markdown-prev rounded'>
             <Markdown markdown={editor}/>
+          </Col>
+          <Col lg={{ span: 5, offset: 6 }} xl={{ span: 4, offset: 6 }} className=' d-none d-lg-flex justify-content-end pt-2 pe-0'>
+            <ExportButton exportFile={editor}/>
           </Col>
         </Row>
       </Container>

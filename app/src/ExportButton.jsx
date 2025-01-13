@@ -20,7 +20,6 @@ const ExportButton =  ({exportFile}) =>{
         link.download = 'markdown.html';
 
         link.click();
-        URL.revokeObjectURL(url);
     }
 
     return(
