@@ -5,6 +5,7 @@ import Footer from './Footer'
 import NotFound from './NotFound'
 import SignUpModal from './SignUpModal'
 import AboutUs from './AboutUs/AboutUs'
+import Contact from './Contact'
 import useThrottle from './custom-hooks/useThrottle'
 import logo from  './assets/logo.png'
 import ScrollToTop from './ScrollToTop'
@@ -93,6 +94,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home handleShowModal={handleShowModal}/>}/>
           <Route path='/about-us' element={<AboutUs />}/>
+          <Route path='/contact' element={<Contact />}/>
           <Route path='/app' element={<h1>Work in progress</h1>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>

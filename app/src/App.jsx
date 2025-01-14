@@ -56,7 +56,7 @@ Go back to the [Landing page](https://www.youtube.com)
           <Col xs={12} md={6} lg={{ span: 5, offset: 0 }} xl={{ span: 4, offset: 0 }} className=' bg-light p-2 h-100 markdown-prev rounded'>
             <Markdown markdown={editor}/>
           </Col>
-          <Col lg={{ span: 5, offset: 6 }} xl={{ span: 4, offset: 6 }} className=' d-none d-lg-flex justify-content-end pt-2 pe-0'>
+          <Col lg={{ span: 5, offset: 6 }} xl={{ span: 4, offset: 6 }} className=' d-none d-lg-flex justify-content-end pt-2 px-0'>
             <ExportButton exportFile={editor}/>
           </Col>
         </Row>

@@ -1,9 +1,8 @@
-import { Container, Button, Image, Row, Col, Card, CardGroup} from "react-bootstrap";
+import { Container, Button, Image, Row, Col, Card} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import { Link } from "react-router-dom";
-import SignUpModal from "./SignUpModal";
 import LearnMoreModal from "./LearnMoreModal";
 import img from './assets/main.jpg';
 import pic1 from './assets/pic1.jpg';
