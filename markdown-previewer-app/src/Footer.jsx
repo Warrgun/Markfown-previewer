@@ -1,4 +1,6 @@
+import React from "react"
 import { Button, Container, Form, Col, Row} from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 const Footer = () =>{
     return(
@@ -26,8 +28,8 @@ const Footer = () =>{
                             </Col>
                         </Row>
                         <Row className=" border-top">
-                            <Col>
-                                <p className=" text-body-secondary text-center mt-3 mb-0">© 2030 Markdown Previewer, Inc.</p>
+                            <Col className="text-center pt-3">
+                                <Link to="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/" className="link-underline-opacity-0 link-light link-opacity-25">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</Link>
                             </Col>
                         </Row>
                     </Container>

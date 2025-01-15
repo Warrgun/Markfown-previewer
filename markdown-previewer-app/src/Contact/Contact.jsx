@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from './contact.module.css'
 
@@ -31,17 +31,17 @@ const Contact = () =>{
             title:'',
             emailContent:''
         });
-    }
+    }  
 
     return(
         <>
-            <Container className="flex-grow-1 align-content-center mt-sm-5 mb-0 mb-sm-4">
-                <Row>
-                    <Col lg={{span:6, offset:3}} className="mt-5 text-bg-dark p-5">
+            <Container fluid className={`flex-grow-1 d-flex d-sm-block align-content-center pt-sm-5 mb-0 pb-sm-4 ${styles.background}`}>
+                <Row className={`pt-5 ${styles.height}`}>
+                    <Col xl={{span:4, offset:4}} lg={{span:8, offset:2}} sm={{span:10, offset:1}} className="h-100 text-bg-dark px-5 pt-5 pb-4 py-sm-5 bg-opacity-75 align-content-center">
                         <Form onSubmit={handleSubmit}>
                             <div className="header">
                                 <h4>Let Us Help You</h4>
-                                <p>If you have any questions, feel free to ask them!</p>
+                                <p>If you have any questions, feel free to ask!</p>
                             </div>
                             <Form.Group className="mb-3" controlId="name-input">
                                 <Form.Control type="text" name="name" placeholder="Name" className={`bg-transparent border-0 border-bottom rounded-0 ${styles.input} ${styles.boxShadow}`} value={content.name} onChange={handleChange} />
