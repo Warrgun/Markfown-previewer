@@ -1,0 +1,27 @@
+.input{
+    color: white !important;
+}
+
+.input::placeholder{
+    color: white !important;
+    font-weight: bold;
+}
+
+.input:focus,
+.input:active{
+    background: none;
+    outline: none !important;
+}
+.boxShadow:focus{
+    box-shadow: 0 2px 0px 0px !important; 
+}
+
+.title{
+    font-family: Tahoma, Helvetica, sans-serif !important;
+}
+
+.title:focus{
+    box-shadow: 0 -2px 0 0 !important;
+}
+
+
