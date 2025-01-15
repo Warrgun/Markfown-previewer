@@ -1,85 +1,18 @@
-.about-container{
-  height: 100vh;
-}
-
-.about-decorations {
-    border-radius: 50%;
-}
-
-.about-decorations.circle {
-    background-color: rgb(245, 171, 198);
-    width: max(200px, min(300px, 16.1vw)); /* Min: 200px, Max: 300px */
-    height: max(200px, min(300px, 16.1vw)); /* Same as width for circular shape */
-    left: 45%;
-    top: 5%;
-    z-index: -3;
-}
-
-.about-decorations.striped-circle {
-    width: max(250px, min(350px, 18.8vw)); /* Min: 250px, Max: 350px */
-    height: max(250px, min(350px, 18.8vw)); /* Matches width */
-    background-image: repeating-linear-gradient(45deg, #000000, #000000 20px, transparent 20px, transparent 40px);
-    left: 66%;
-    top: 30%;
-    z-index: -3;
-}
-
-.profile-circle {
-    display: inline-block;
-    background-color: #f8e7e1;
-    border: max(2px, min(5px, 0.27vw)) solid #f8e7e1; /* Min: 2px, Max: 5px */
-    padding-top: max(2px, min(5px, 0.27vw)); /* Matches border */
-    padding-right: max(5px, min(10px, 0.54vw)); /* Min: 5px, Max: 10px */
-    left: 58%;
-    top: 10%;
-    z-index: -1;
-}
-
-.profile-image {
-    border-radius: 50%;
-    width: max(200px, min(250px, 13.4vw)); /* Min: 200px, Max: 250px */
-    height: max(200px, min(250px, 13.4vw)); /* Matches width */
-    object-fit: cover;
-}
-
 .about-card {
-    width: max(320px, min(50rem, 53.8vw)); /* Min: 320px, Max: 50rem (800px) */
-    top: 35%;
     -webkit-box-shadow: 28px 28px 21px -22px rgba(72, 72, 72, 1);
     -moz-box-shadow: 28px 28px 21px -22px rgba(72, 72, 72, 1);
     box-shadow: 28px 28px 21px -22px rgba(72, 72, 72, 1);
     z-index: -2;
 }
-
-.about-rect {
-    background-color: rgb(255, 166, 180);
-    width: max(200px, min(300px, 16.1vw)); /* Min: 200px, Max: 300px */
-    height: max(150px, min(200px, 10.7vw)); /* Min: 150px, Max: 200px */
-    top: 25%;
-    left: 20%;
-    z-index: -1;
-    transform: rotate(-45deg);
-}
-
-.about-rect.about-rect-shadow {
-    -webkit-box-shadow: 0px 16px 38px 2px rgba(255, 159, 189, 1);
-    -moz-box-shadow: 0px 16px 38px 2px rgba(255, 159, 189, 1);
-    box-shadow: 0px 16px 38px 2px rgba(255, 159, 189, 1);
-    z-index: -3;
-}
-
-.about-rect-striped {
-    background-image: repeating-linear-gradient(35deg, #000000, #000000 20px, transparent 20px, transparent 40px);
-    width: max(300px, min(400px, 21.5vw)); /* Min: 300px, Max: 400px */
-    height: max(200px, min(250px, 13.4vw)); /* Min: 200px, Max: 250px */
-    top: 75%;
-    left: 20%;
-    z-index: -1;
-    transform: rotate(10deg);
+.custom-background{
+    background-image: url(../assets/rrrepeat.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .card-divider {
-    border-left: max(1px, min(2px, 0.11vw)) solid rgb(132, 132, 132); /* Min: 1px, Max: 2px */
+    border-left: 2px solid rgb(132, 132, 132);
 }
 
 .about-title{
@@ -91,55 +24,16 @@
 
 @media (max-width: 767px) {
     .about-card {
-        width: max(90%, 320px);
-        top: 15%;
         -webkit-box-shadow: 0px 11px 24px 0px rgba(66, 68, 90, 1);
         -moz-box-shadow: 0px 11px 24px 0px rgba(66, 68, 90, 1);
         box-shadow: 0px 11px 24px 0px rgba(66, 68, 90, 1);
     }
-    .about-decorations.circle {
-       left: -10%;
-       width: 35vw;
-       height: 35vw;
-    }
-    .about-decorations.striped-circle {
-        width: 35vw;
-        height: 35vw;
-        left: 80%;
-        top: 3%;
-        transform: translateX(-50%);
-        z-index: -1;
-    }
-    .profile-circle {
-      display: none;
-    }
-    .about-rect {
-       display: none;
-    }
-    .about-rect-striped {
-        display: none;
-    }
 }
 
-@media (max-width:500px){
-    .about-rect{
-        display: none;
-    }
-    .profile-circle{
-        display: none;
-    }
-    .about-decorations.striped-circle{
-        display: none;
-    }
-    .about-decorations.circle{
-        display: none;
-    }
+@media (max-width:575px){
     .about-title{
         text-align: center;
         font-size: 3rem !important;
-    }
-    .about-container{
-        height: 100%;
     }
     .about-flex{
         display: flex;
