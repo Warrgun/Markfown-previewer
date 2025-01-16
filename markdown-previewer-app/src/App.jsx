@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
-import {Link, Route, Routes, NavLink} from 'react-router-dom'
+import {Link, Route, Routes, NavLink, useLocation} from 'react-router-dom'
 import Home from './Home'
 import Footer from './Footer'
 import NotFound from './NotFound'
@@ -10,6 +10,8 @@ import useThrottle from './custom-hooks/useThrottle'
 import logo from  './assets/logo.png'
 import ScrollToTop from './ScrollToTop'
 import {Navbar, Button, Container, Nav, Offcanvas} from 'react-bootstrap'
+
+
 import './App.css'
 
 function App() {
@@ -17,6 +19,11 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const lastScrollPosition = useRef(0);
   const navContainer = useRef(null);
+  const location = useLocation();
+  const [credits, setCredits] = useState({
+    link:'',
+    company:'',
+  })
 
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
@@ -56,6 +63,31 @@ function App() {
       window.removeEventListener('resize', updateEventListener);
     })
   },[throttledScrollFunc])
+
+  useEffect(()=>{
+    const currLocation = location.pathname;
+    switch(currLocation){
+      case '/contact':
+        setCredits(prev =>({
+          ...prev,
+          link:'https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/',
+          company:'Free SVG Backgrounds and Patterns by SVGBackgrounds.com'}));
+        break;
+      case '/about-us':
+        setCredits(prev =>({
+          ...prev,
+          link:'http://www.freepik.com',
+          company:'Background designed by pikisuperstar / Freepik'}));
+        break;
+      default:
+        setCredits(prev=>({
+          ...prev,
+          link:null,
+          company:"default"
+        }));
+    }
+  },[location])
+
 
   return (
     <> 
@@ -98,7 +130,7 @@ function App() {
           <Route path='/app' element={<h1>Work in progress</h1>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
-        <Footer/>
+        <Footer credits={credits}/>
       </div>
       <SignUpModal show={showModal} onHide={handleCloseModal} />
     </>

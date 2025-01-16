@@ -2,7 +2,7 @@ import React from "react"
 import { Button, Container, Form, Col, Row} from "react-bootstrap"
 import { Link } from "react-router-dom"
 
-const Footer = () =>{
+const Footer = ({credits}) =>{
     return(
         <>
             <footer className=" text-light mt-auto p-5 vw-100" style={{backgroundColor:"var(--black)"}}>
@@ -29,12 +29,15 @@ const Footer = () =>{
                         </Row>
                         <Row className=" border-top">
                             <Col className="text-center pt-3">
-                                <Link to="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/" className="link-underline-opacity-0 link-light link-opacity-25">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</Link>
+                                {credits.link && credits.company?(
+                                    <Link to={credits.link} target="_blank" rel="noopener noreferrer" className="link-underline-opacity-0 link-light link-opacity-50">{credits.company}</Link>
+                                ):(
+                                    <p className=" opacity-50 mb-0">® Company, Markdown Previewer 2030.</p>
+                                )}
                             </Col>
                         </Row>
                     </Container>
                 </div>
-                
             </footer>
         </>
     )

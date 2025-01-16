@@ -35,11 +35,11 @@ const Contact = () =>{
 
     return(
         <>  
-            <Container fluid className="p-0 flex-grow-1 d-flex flex-column ">
+            <Container fluid className={`p-0 flex-grow-1 d-flex flex-column ${styles.background}`}>
                 <div className="d-block w-100" style={{height:"73px"}}></div>
-                <Container fluid className={`flex-grow-1 d-flex d-sm-block align-content-center ${styles.background}`}>
+                <Container fluid className={`flex-grow-1 d-flex d-sm-block align-content-center`}>
                     <Row className={`${styles.height}`}>
-                        <Col xl={{span:4, offset:4}} lg={{span:8, offset:2}} sm={{span:10, offset:1}} className="h-100 text-bg-dark px-5 py-4 py-sm-5 bg-opacity-75 align-content-center">
+                        <Col xl={{span:4, offset:4}} lg={{span:8, offset:2}} sm={{span:10, offset:1}} className="h-100 text-bg-dark px-5 py-4 py-sm-5 my-sm-5 bg-opacity-75 align-content-center">
                             <Form onSubmit={handleSubmit}>
                                 <div className="header">
                                     <h4>Let Us Help You</h4>
