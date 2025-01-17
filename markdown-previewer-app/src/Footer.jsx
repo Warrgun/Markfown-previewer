@@ -10,7 +10,8 @@ const Footer = ({credits}) =>{
                     <Container data-bs-theme="dark">
                         <Row className="justify-content-center">
                             <Col xs={6} className=" w-auto">
-                            <p className=" fw-light"><span className="fw-bold">Stay informed, subscribe</span><br/>Receive updates, news, and exclusive offers</p>
+                            <p className=" fw-light mb-0 text-center text-md-start"><span className="fw-bold">Stay informed, subscribe</span></p>
+                            <p className="fw-light text-center text-md-start">Receive updates, news, and exclusive offers</p>
                             </Col>
                             <Col xs={6} className=" w-auto mb-md-0 mb-5">
                                 <Form className="d-flex flex-row justify-content-end">
