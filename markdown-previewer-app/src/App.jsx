@@ -71,7 +71,7 @@ function App() {
         setCredits(prev =>({
           ...prev,
           link:'https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/',
-          company:'Free SVG Backgrounds and Patterns by SVGBackgrounds.com'}));
+          company:`Free SVG Backgrounds and Patterns by SVGBackgrounds.com`}));
         break;
       case '/about-us':
         setCredits(prev =>({

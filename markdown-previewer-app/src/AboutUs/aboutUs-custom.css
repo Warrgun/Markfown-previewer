@@ -1,8 +1,37 @@
+.sky-container {
+    background-color: #F6E7FF; 
+    background-image: 
+        radial-gradient(circle at top left, rgba(92, 73, 168, 0.8), transparent 60%),
+        linear-gradient(to bottom, #F6E7FF, #FFB4D9, #FFC27A);
+    z-index: -111;
+}
+
+.container-background{
+    background-image: url(../assets/boy_girl.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -100;
+}
+
+.wave{
+    background-image: url(../assets/wave.svg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position: bottom;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -50;
+}
+
 .about-container{
     background-color: #CCB0DD;
     border-radius: 10px ;
 }
-
 
 .card-divider {
     border-left: 2px solid rgb(132, 132, 132);
@@ -17,7 +46,7 @@
 .purple-container{
     
     background-color: #EBE4F4;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px !important;
 }
 
 .ball{
@@ -31,23 +60,21 @@
     font-family: Verdana, Tahoma !important ;
 }
 
-.boy, .girl{
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-}
-.boy{
-    background-image: url(../assets/boy.svg);
-}
-.girl{
-    background-image: url(../assets/girl.svg);
-}
-
 @media (max-width:575px){
     .about-title{
         text-align: center;
         font-size: 3rem !important;
     }
 }
+
+@media (max-width: 1250px){
+    .container-background{
+        background-size: cover;
+
+    }
+}
+
+
+
 
 
