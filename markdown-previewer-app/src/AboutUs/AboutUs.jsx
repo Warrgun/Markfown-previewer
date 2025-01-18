@@ -4,15 +4,23 @@ import './aboutUs-custom.css';
 
 const AboutUs = () => {
     return (
-        <Container fluid className="p-0 flex-grow-1 d-flex flex-column">
+        <Container fluid className="p-0 flex-grow-1 w-100 d-flex flex-column position-relative sky-container">
             {/* Spacer for top margin */}
             <div style={{ height: "73px" }}></div>
-
+            {/*stars for the sky*/}
+            <div className="star star-1"></div>
+            <div className="star star-2"></div>
+            <div className="star star-3"></div>
+            <div className="star star-4"></div>
+            <div className="star star-5"></div>
+            <div className="star star-6"></div>
+            <div className="star star-7"></div>
+            <div className="star star-8"></div>
             {/* Main Content */}
-            <Container fluid className="flex-grow-1 w-100 position-relative align-content-center sky-container">
+            <Container fluid className="flex-grow-1 w-100 position-relative align-content-center">
                 {/* Background Layers */}
-                <div className="container-background position-absolute h-100 w-100"></div>
-                <div className="wave w-100 h-100 position-absolute"></div>
+                <div className="container-background position-absolute h-100 w-100 d-none d-md-block"></div>
+                <div className="wave w-100 h-100 position-absolute d-none d-md-block"></div>
 
                 <Row className="py-sm-5 p-md-0">
                     <Col 
