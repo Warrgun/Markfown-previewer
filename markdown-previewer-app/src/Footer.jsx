@@ -1,8 +1,15 @@
-import React from "react"
+import React, { useState } from "react"
 import { Button, Container, Form, Col, Row} from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 const Footer = ({credits}) =>{
+    const [email, setEmail] = useState('');
+
+    const handleButtonClick = () => {
+        console.log(`E-mail: ${email}`);
+        setEmail('');
+    }
+    
     return(
         <>
             <footer className=" text-light mt-auto p-5 vw-100" style={{backgroundColor:"var(--black)"}}>
@@ -17,12 +24,12 @@ const Footer = ({credits}) =>{
                                 <Form className="d-flex flex-row justify-content-end">
                                     <Form.Group controlId="formEmail">
                                         <Form.Label hidden>Email address</Form.Label>
-                                        <Form.Control className="input-control rounded-0 bg-transparent" style={{border:"solid 2px var(--folly)"}} type="emial" name="email" placeholder="Enter email adress" required/>
+                                        <Form.Control className="input-control rounded-0 bg-transparent" value={email} onChange={e=>setEmail(e.target.value)} style={{border:"solid 2px var(--folly)"}} type="emial" name="email" placeholder="Enter email adress" required/>
                                         <Form.Control.Feedback type="invalid">
                                             Provide correct Email.
                                         </Form.Control.Feedback>
                                     </Form.Group>
-                                    <Button type="button" className="button-one rounded-0 fw-bold ms-3 input-focus">
+                                    <Button type="button" onClick={handleButtonClick} className="button-one rounded-0 fw-bold ms-3 input-focus">
                                         Join
                                     </Button>
                                 </Form>

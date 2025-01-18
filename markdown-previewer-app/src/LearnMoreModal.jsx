@@ -26,7 +26,6 @@ const LearnMoreModal = (props) =>{
             <ul>
                 <li><span className=' fw-bold'>Live Preview:</span> See your Markdown text rendered in real-time as you type.</li>
                 <li><span className=' fw-bold'>Syntax Highlighting:</span> Easily spot errors or inconsistencies in your Markdown.</li>
-                <li><span className=' fw-bold'>Customizable Themes:</span> Switch between light and dark modes or customize the appearance.</li>
             </ul>
             <h5>Why Use the Markdown Previewer?</h5>
             <ul>
@@ -38,7 +37,7 @@ const LearnMoreModal = (props) =>{
             <ul>
                 <li><span className=' fw-bold'>Write Markdown:</span> Use the editor pane to type your Markdown text.</li>
                 <li><span className=' fw-bold'>Preview in Real-Time:</span> View the rendered output in the adjacent preview pane.</li>
-                <li><span className=' fw-bold'>Export:</span> Save your work as a file or copy it directly to your clipboard.</li>
+                <li><span className=' fw-bold'>Export:</span> Save your work as an html file and show around what you created.</li>
             </ul>
           </Modal.Body>
           <Modal.Footer>

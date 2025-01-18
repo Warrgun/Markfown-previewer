@@ -62,12 +62,12 @@ const Home = ({handleShowModal}) =>{
                         and enjoy the support for various markdown elements.</p>
                         <div className="d-flex w-100 gap-2 gap-md-0 justify-content-between">
                             <div className="pe-1 pe-md-2 rounded-2 bg-cards text-lg-start text-center">
-                                <h3 className="fw-bold">50%</h3>
+                                <h3 className="fw-bold pt-2 pt-md-0">50%</h3>
                                 <p>Increase in User Satisfaction with
                                 Markdown Previewer</p>
                             </div>
                             <div className="ps-1 text-center text-lg-start ps-sm-0 pe-md-2 bg-cards rounded-2">
-                                <h3 className="fw-bold">50%</h3>
+                                <h3 className="fw-bold pt-2 pt-md-0">50%</h3>
                                 <p>Reduction in Document Errors with
                                 Markdown Previewer</p>
                             </div>

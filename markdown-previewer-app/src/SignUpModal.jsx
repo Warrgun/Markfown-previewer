@@ -60,7 +60,7 @@ function SignUpModal(props) {
               <Form.Control className=" input-border rounded-0 bg-transparent" type="password" name='password' placeholder="Password" value={formData.password} onChange={handleChange} required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" name='bool' className='custom-checkbox' label="Keep you signed." checked={formData.bool} onChange={handleChange} />
+              <Form.Check type="checkbox" name='bool' className='custom-checkbox' label="Keep me signed." checked={formData.bool} onChange={handleChange} />
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
