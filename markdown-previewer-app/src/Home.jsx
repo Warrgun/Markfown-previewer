@@ -1,7 +1,7 @@
-import { Container, Button, Image, Row, Col, Card} from "react-bootstrap";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faStar} from "@fortawesome/free-solid-svg-icons";
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Container, Button, Image, Row, Col, Card } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from "react-router-dom";
 import LearnMoreModal from "./LearnMoreModal";
 import img from './assets/main.jpg';
@@ -11,25 +11,50 @@ import card2 from './assets/card2.jpg';
 import card3 from './assets/card3.jpg';
 import avatar from './assets/avatar.jpg';
 import logo from './assets/logo.png';
+import Carousel from 'react-bootstrap/Carousel';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import {EffectCoverflow, Pagination} from 'swiper/modules';
+import { EffectCoverflow, Pagination } from 'swiper/modules';
 import { useState } from "react";
 
-const Home = ({handleShowModal}) =>{
+const Home = ({ handleShowModal }) => {
     const [showModal, setShowModal] = useState(false);
     const [fullscreen, setFullscreen] = useState(true);
 
     const handleModalHide = () => setShowModal(false);
-    const handleModalShow = () =>{
+    const handleModalShow = () => {
         setFullscreen('md-down');
-        setShowModal(true);  
+        setShowModal(true);
     };
 
-    return(
+    return (
         <>
-            <div className="background-img mb-5 vw-100" style={{backgroundImage:`url(${img})`}}></div>
+            <Carousel className="mb-5">
+                <Carousel.Item >
+                    <Image src={img} className="w-100 background-img" alt="first-slide" loading="lazy" fluid />
+                    <Carousel.Caption>
+                        <h3>First slide label</h3>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item >
+                    <Image src={img} className="w-100 background-img" alt="second-slide" loading="lazy" fluid />
+                    <Carousel.Caption>
+                        <h3>Second slide label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Image src={img} className="w-100 background-img" alt="third-slide" loading="lazy" fluid />
+                    <Carousel.Caption>
+                        <h3>Third slide label</h3>
+                        <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        </p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
             <Container className="flex-grow-1">
                 <Row>
                     <Col md={6}>
@@ -48,28 +73,28 @@ const Home = ({handleShowModal}) =>{
                             </div>
                         </div>
                     </Col>
-                </Row> 
+                </Row>
                 <Row className=" my-2 my-md-5 pb-md-5">
-                    <Col md={6}> 
-                        <Image src={pic1} loading="lazy" className="" fluid/>
+                    <Col md={6}>
+                        <Image src={pic1} loading="lazy" className="" fluid />
                     </Col>
                     <Col md={6} className="mt-5 mt-md-0">
                         <p className=" d-block d-none d-lg-block">Simplistic</p>
                         <h2 className=" text-lg-start">Discover the Power of</h2>
                         <h2 className=" text-lg-start">Markdown Previewer</h2>
                         <p className="fs-5 my-md-5 my-4 text-lg-start">Join thousands of users who have experienced the convenience and
-                        efficiency of our markdown previewer. Preview your documents with ease
-                        and enjoy the support for various markdown elements.</p>
+                            efficiency of our markdown previewer. Preview your documents with ease
+                            and enjoy the support for various markdown elements.</p>
                         <div className="d-flex w-100 gap-2 gap-md-0 justify-content-between">
                             <div className="pe-1 pe-md-2 rounded-2 bg-cards text-lg-start text-center">
                                 <h3 className="fw-bold pt-2 pt-md-0">50%</h3>
                                 <p>Increase in User Satisfaction with
-                                Markdown Previewer</p>
+                                    Markdown Previewer</p>
                             </div>
                             <div className="ps-1 text-center text-lg-start ps-sm-0 pe-md-2 bg-cards rounded-2">
                                 <h3 className="fw-bold pt-2 pt-md-0">50%</h3>
                                 <p>Reduction in Document Errors with
-                                Markdown Previewer</p>
+                                    Markdown Previewer</p>
                             </div>
                         </div>
                         <div className=" my-5 text-lg-start">
@@ -91,25 +116,25 @@ const Home = ({handleShowModal}) =>{
                         </Col>
                         <Col md={6}>
                             <p className="fs-5 p-0">Our markdown previewer offers a range of key features to enhance your
-                            writing experience. With live preview, syntax highlighting, and export
-                            options, you can create beautiful and professional-looking documents
-                            effortlessly.</p>
-                        </Col>  
+                                writing experience. With live preview, syntax highlighting, and export
+                                options, you can create beautiful and professional-looking documents
+                                effortlessly.</p>
+                        </Col>
                     </Row>
                 </Container>
                 <Swiper
-                    effect={'coverflow'} 
+                    effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
                     slidesPerView={"auto"}
                     initialSlide={1}
                     loop={false}
                     coverflowEffect={{
-                        rotate:50,
-                        stretch:0,
+                        rotate: 50,
+                        stretch: 0,
                         depth: 100,
-                        modifier:1,
-                        slideShadows:true
+                        modifier: 1,
+                        slideShadows: true
                     }}
                     pagination={{
                         clickable: true,
@@ -119,27 +144,27 @@ const Home = ({handleShowModal}) =>{
                     data-bs-theme="dark"
                 >
                     <SwiperSlide>
-                            <div className="card">
-                            <img src={card1} className="card-img-top" alt="card1"/>
-                                <div className="card-body">
-                                    <h3 className="card-title">Live Preview</h3>
-                                    <p className="card-text">See your changes in real-time as you type.</p>
-                                </div>
+                        <div className="card">
+                            <img src={card1} className="card-img-top" alt="card1" />
+                            <div className="card-body">
+                                <h3 className="card-title">Live Preview</h3>
+                                <p className="card-text">See your changes in real-time as you type.</p>
                             </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                            <div className="card">
-                            <img src={card2} className="card-img-top" alt="card2"/>
-                                <div className="card-body">
-                                    <h3 className="card-title">Syntax Highlighting</h3>
-                                    <p className="card-text">Highlight and differentiate your code for 
-                                    better readability.</p>
-                                </div>
-                            </div>
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="card">
-                        <img src={card3} className="card-img-top" alt="card3"/>
+                            <img src={card2} className="card-img-top" alt="card2" />
+                            <div className="card-body">
+                                <h3 className="card-title">Syntax Highlighting</h3>
+                                <p className="card-text">Highlight and differentiate your code for
+                                    better readability.</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="card">
+                            <img src={card3} className="card-img-top" alt="card3" />
                             <div className="card-body">
                                 <h3 className="card-title">Export Options</h3>
                                 <p className="card-text">Save or share your documents in various formats.</p>
@@ -153,18 +178,18 @@ const Home = ({handleShowModal}) =>{
                     </Button>
                     <Button onClick={handleShowModal} type="button" className="button-three bg-transparent rounded-0 fw-bold ms-4 border-0 input-focus">
                         Sign Up<i className="arrow ms-2"></i>
-                    </Button>             
+                    </Button>
                 </Container>
             </Container>
             <Container className="mt-3 mb-5 pt-sm-5 pb-sm-5">
                 <Row>
                     <Col xs={12} className=" text-center">
                         <div className="w-100 mb-3 fs-5">
-                            <FontAwesomeIcon icon={faStar} style={{color:"var(--folly)"}} />
-                            <FontAwesomeIcon icon={faStar} style={{color:"var(--folly)"}}/>
-                            <FontAwesomeIcon icon={faStar} style={{color:"var(--folly)"}}/>
-                            <FontAwesomeIcon icon={faStar} style={{color:"var(--folly)"}}/>
-                            <FontAwesomeIcon icon={faStar} style={{color:"var(--folly)"}}/>
+                            <FontAwesomeIcon icon={faStar} style={{ color: "var(--folly)" }} />
+                            <FontAwesomeIcon icon={faStar} style={{ color: "var(--folly)" }} />
+                            <FontAwesomeIcon icon={faStar} style={{ color: "var(--folly)" }} />
+                            <FontAwesomeIcon icon={faStar} style={{ color: "var(--folly)" }} />
+                            <FontAwesomeIcon icon={faStar} style={{ color: "var(--folly)" }} />
                         </div>
                         <div className="d-flex mx-auto text-wrap-flex" >
                             <h3>
@@ -176,21 +201,21 @@ const Home = ({handleShowModal}) =>{
                     </Col>
                     <Col xs='auto' className="mx-auto">
                         <Card className="border-0 d-flex flex-row align-items-center my-4 ">
-                            <Image src={avatar} alt="avatar" roundedCircle fluid loading="lazy"/>
-                            <Card.Body style={{borderRight:"2px solid var(--folly)"}}>
+                            <Image src={avatar} alt="avatar" roundedCircle fluid loading="lazy" />
+                            <Card.Body style={{ borderRight: "2px solid var(--folly)" }}>
                                 <Card.Title> John Doe </Card.Title>
                                 <Card.Text>Content Writer, ABC Company</Card.Text>
                             </Card.Body>
                             <Card.Footer className=" fw-bold fs-3 border-0 bg-transparent ms-2">
-                                <Image src={logo} width={100} alt="logo"/>
+                                <Image src={logo} width={100} alt="logo" />
                             </Card.Footer>
                         </Card>
                     </Col>
                 </Row>
             </Container>
-            <LearnMoreModal show={showModal} onHide={handleModalHide} fullscreen={fullscreen}/>
+            <LearnMoreModal show={showModal} onHide={handleModalHide} fullscreen={fullscreen} />
         </>
-        
+
     )
 }
 
