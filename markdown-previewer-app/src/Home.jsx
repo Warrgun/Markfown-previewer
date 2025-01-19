@@ -51,7 +51,7 @@ const Home = ({handleShowModal}) =>{
                 </Row> 
                 <Row className=" my-2 my-md-5 pb-md-5">
                     <Col md={6}> 
-                        <Image src={pic1} loading="lazy" fluid/>
+                        <Image src={pic1} loading="lazy" className="" fluid/>
                     </Col>
                     <Col md={6} className="mt-5 mt-md-0">
                         <p className=" d-block d-none d-lg-block">Simplistic</p>
@@ -80,7 +80,6 @@ const Home = ({handleShowModal}) =>{
                         </div>
                     </Col>
                 </Row>
-                
             </Container>
             <Container fluid className="d-flex flex-column w-100 pb-5 mb-5 bg-dark-subtle hr" >
                 <Container>
