@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Button, Container, Form, Col, Row } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 const Footer = ({ credits }) => {
     const [email, setEmail] = useState('');
     const [validated, setValidated] = useState(false);
+    const location = useLocation()
 
     const handleButtonClick = (e) => {
         e.preventDefault();
@@ -20,6 +21,8 @@ const Footer = ({ credits }) => {
             setEmail('');
         }
     }
+
+    useEffect(() => setValidated(false), [location])
 
     return (
         <>
