@@ -197,6 +197,10 @@ input[type="checkbox"]:hover {
     .swiper-slide {
         width: 320px !important;
     }
+
+    .yellow-jacket-height {
+        height: 100% !important;
+    }
 }
 
 @media (max-width: 767px) {
@@ -211,6 +215,7 @@ input[type="checkbox"]:hover {
     .carousel-item::before {
         height: 100%;
     }
+
 }
 
 @media (min-width: 1200px) {
@@ -222,5 +227,9 @@ input[type="checkbox"]:hover {
 @media (min-width: 1400px) {
     .swiper-slide {
         width: 450px !important;
+    }
+
+    .yellow-jacket-height {
+        height: auto !important;
     }
 }

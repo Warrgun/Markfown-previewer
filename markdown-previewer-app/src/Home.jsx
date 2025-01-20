@@ -78,7 +78,7 @@ const Home = ({ handleShowModal }) => {
                 </Row>
                 <Row className=" my-2 my-md-5 pb-md-5">
                     <Col md={6}>
-                        <Image src={pic1} loading="lazy" className="h-100 object-fit-md-cover object-fit-xl-contain" style={{ objectPosition: "right" }} fluid />
+                        <Image src={pic1} loading="lazy" className="yellow-jacket-height object-fit-md-cover object-fit-xl-contain" style={{ objectPosition: "right" }} fluid />
                     </Col>
                     <Col md={6} className="mt-5 mt-md-0">
                         <p className=" d-block d-none d-lg-block">Simplistic</p>
