@@ -4,7 +4,9 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from "react-router-dom";
 import LearnMoreModal from "./LearnMoreModal";
-import img from './assets/main.jpg';
+import slide1 from './assets/main.jpg';
+import slide2 from './assets/second-slide.jpg';
+import slide3 from './assets/third-slide.jpg';
 import pic1 from './assets/pic1.jpg';
 import card1 from './assets/card1.jpg';
 import card2 from './assets/card2.jpg';
@@ -31,26 +33,26 @@ const Home = ({ handleShowModal }) => {
     return (
         <>
             <Carousel className="mb-5">
-                <Carousel.Item >
-                    <Image src={img} className="w-100 background-img" alt="first-slide" loading="lazy" fluid />
+                <Carousel.Item>
+                    <Image src={slide1} className="w-100 background-img object-fit-cover" alt="first-slide" loading="lazy" fluid />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Crafting the Web with HTML</h3>
+                        <p>A glimpse of code in action, setting the foundation for stunning web pages.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item >
-                    <Image src={img} className="w-100 background-img" alt="second-slide" loading="lazy" fluid />
+                    <Image src={slide2} className="w-100 background-img object-fit-cover" alt="second-slide" loading="lazy" fluid />
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Design Meets Functionality</h3>
+                        <p>Witness a complete web design journey, from hero section to call-to-action.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <Image src={img} className="w-100 background-img" alt="third-slide" loading="lazy" fluid />
+                    <Image src={slide3} className="w-100 background-img object-fit-cover" alt="third-slide" loading="lazy" fluid />
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
+                        <h3>Markdown in the Real World</h3>
                         <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                            A hands-on approach to building and refining projects with ease.
                         </p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -76,22 +78,22 @@ const Home = ({ handleShowModal }) => {
                 </Row>
                 <Row className=" my-2 my-md-5 pb-md-5">
                     <Col md={6}>
-                        <Image src={pic1} loading="lazy" className="" fluid />
+                        <Image src={pic1} loading="lazy" className="h-100 object-fit-md-cover object-fit-xl-contain" style={{ objectPosition: "right" }} fluid />
                     </Col>
                     <Col md={6} className="mt-5 mt-md-0">
                         <p className=" d-block d-none d-lg-block">Simplistic</p>
-                        <h2 className=" text-lg-start">Discover the Power of</h2>
-                        <h2 className=" text-lg-start">Markdown Previewer</h2>
-                        <p className="fs-5 my-md-5 my-4 text-lg-start">Join thousands of users who have experienced the convenience and
+                        <h2>Discover the Power of</h2>
+                        <h2>Markdown Previewer</h2>
+                        <p className="fs-5 my-md-5 my-4">Join thousands of users who have experienced the convenience and
                             efficiency of our markdown previewer. Preview your documents with ease
                             and enjoy the support for various markdown elements.</p>
                         <div className="d-flex w-100 gap-2 gap-md-0 justify-content-between">
-                            <div className="pe-1 pe-md-2 rounded-2 bg-cards text-lg-start text-center">
+                            <div className="pe-1 pe-md-2 rounded-2 bg-cards text-md-start text-center">
                                 <h3 className="fw-bold pt-2 pt-md-0">50%</h3>
                                 <p>Increase in User Satisfaction with
                                     Markdown Previewer</p>
                             </div>
-                            <div className="ps-1 text-center text-lg-start ps-sm-0 pe-md-2 bg-cards rounded-2">
+                            <div className="ps-1 text-center text-md-start ps-sm-0 pe-md-2 bg-cards rounded-2">
                                 <h3 className="fw-bold pt-2 pt-md-0">50%</h3>
                                 <p>Reduction in Document Errors with
                                     Markdown Previewer</p>
