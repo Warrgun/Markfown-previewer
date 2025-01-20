@@ -89,12 +89,12 @@ const Home = ({ handleShowModal }) => {
                             and enjoy the support for various markdown elements.</p>
                         <div className="d-flex w-100 gap-2 gap-md-0 justify-content-between">
                             <div className="pe-1 pe-md-2 rounded-2 bg-cards text-md-start text-center">
-                                <h3 className="fw-bold pt-2 pt-md-0">50%</h3>
+                                <h3 className="fw-bold pt-3 pt-md-0">50%</h3>
                                 <p>Increase in User Satisfaction with
                                     Markdown Previewer</p>
                             </div>
                             <div className="ps-1 text-center text-md-start ps-sm-0 pe-md-2 bg-cards rounded-2">
-                                <h3 className="fw-bold pt-2 pt-md-0">50%</h3>
+                                <h3 className="fw-bold pt-3 pt-md-0">50%</h3>
                                 <p>Reduction in Document Errors with
                                     Markdown Previewer</p>
                             </div>
@@ -108,7 +108,7 @@ const Home = ({ handleShowModal }) => {
                     </Col>
                 </Row>
             </Container>
-            <Container fluid className="d-flex flex-column w-100 pb-5 mb-5 bg-dark-subtle hr" >
+            <Container fluid className="d-flex flex-column w-100 pb-5 mb-5 hr" >
                 <Container>
                     <Row className=" pt-5">
                         <Col md={6}>
@@ -150,7 +150,7 @@ const Home = ({ handleShowModal }) => {
                             <img src={card1} className="card-img-top" alt="card1" />
                             <div className="card-body">
                                 <h3 className="card-title">Live Preview</h3>
-                                <p className="card-text">See your changes in real-time as you type.</p>
+                                <p className="card-text mx-xl-5 px-xl-4">See your changes in real-time as you type.</p>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -159,7 +159,7 @@ const Home = ({ handleShowModal }) => {
                             <img src={card2} className="card-img-top" alt="card2" />
                             <div className="card-body">
                                 <h3 className="card-title">Syntax Highlighting</h3>
-                                <p className="card-text">Highlight and differentiate your code for
+                                <p className="card-text mx-xl-5 px-xl-2">Highlight and differentiate your code for
                                     better readability.</p>
                             </div>
                         </div>
@@ -169,12 +169,12 @@ const Home = ({ handleShowModal }) => {
                             <img src={card3} className="card-img-top" alt="card3" />
                             <div className="card-body">
                                 <h3 className="card-title">Export Options</h3>
-                                <p className="card-text">Save or share your documents in various formats.</p>
+                                <p className="card-text mx-xl-5 px-xl-4">Save or share your documents in various formats.</p>
                             </div>
                         </div>
                     </SwiperSlide>
                 </Swiper>
-                <Container className="mt-5">
+                <Container className="mt-5 px-0 px-lg-3 ">
                     <Button type="button" className="button-two rounded-0 fw-bold input-focus" onClick={handleModalShow}>
                         Learn More
                     </Button>
@@ -202,13 +202,13 @@ const Home = ({ handleShowModal }) => {
                         </div>
                     </Col>
                     <Col xs='auto' className="mx-auto">
-                        <Card className="border-0 d-flex flex-row align-items-center my-4 ">
+                        <Card className="border-0 d-flex flex-column flex-sm-row align-items-center my-4 ">
                             <Image src={avatar} alt="avatar" roundedCircle fluid loading="lazy" />
-                            <Card.Body style={{ borderRight: "2px solid var(--folly)" }}>
+                            <Card.Body className=" face-card-border">
                                 <Card.Title> John Doe </Card.Title>
                                 <Card.Text>Content Writer, ABC Company</Card.Text>
                             </Card.Body>
-                            <Card.Footer className=" fw-bold fs-3 border-0 bg-transparent ms-2">
+                            <Card.Footer className=" fw-bold fs-3 border-0 bg-transparent ms-2 d-none d-sm-block">
                                 <Image src={logo} width={100} alt="logo" />
                             </Card.Footer>
                         </Card>

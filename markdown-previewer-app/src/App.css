@@ -11,7 +11,7 @@
 .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 320px !important;
+    width: 275px !important;
     margin: 1em 0;
 }
 
@@ -157,6 +157,10 @@ input[type="checkbox"]:hover {
     color: white;
 }
 
+.face-card-border {
+    border-right: 2px solid var(--folly);
+}
+
 @media (min-width: 992px) {
     .start-btn:hover {
         color: hsl(299, 100%, 85%) !important;
@@ -188,6 +192,10 @@ input[type="checkbox"]:hover {
     .bg-cards {
         background-color: transparent !important;
         color: #212529 !important;
+    }
+
+    .swiper-slide {
+        width: 320px !important;
     }
 }
 
