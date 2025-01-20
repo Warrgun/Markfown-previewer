@@ -46,23 +46,25 @@ function App() {
 
   const updateEventListener = useCallback(() => {
     const mobile = window.matchMedia('only screen and (max-width: 991px)').matches;
+
     if (!mobile) {
       document.addEventListener('scroll', throttledScrollFunc, { passive: true });
-    }
-    else {
-      document.removeEventListener('scroll', throttledScrollFunc)
+    } else {
+      document.removeEventListener('scroll', throttledScrollFunc);
     }
   }, [throttledScrollFunc]);
 
   useEffect(() => {
     updateEventListener();
+
     window.addEventListener('resize', updateEventListener);
 
-    return (() => {
+    return () => {
       document.removeEventListener('scroll', throttledScrollFunc);
       window.removeEventListener('resize', updateEventListener);
-    })
-  }, [throttledScrollFunc])
+    };
+  }, [throttledScrollFunc, updateEventListener]);
+
 
   useEffect(() => {
     const currLocation = location.pathname;
