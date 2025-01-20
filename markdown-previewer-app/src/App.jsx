@@ -119,7 +119,7 @@ function App() {
                 </Nav>
                 <div className=" d-md-flex ms-md-3">
                   <Button onClick={handleShowModal} className='button-one rounded-0 m-lg-2 me-2 fw-bold input-focus'>Sign Up</Button>
-                  <Button type='button' as={Link} to='/app' onClick={handleClose} className='button-two rounded-0 m-lg-2 fw-bold input-focus'>Start For Free</Button>
+                  <Button type='button' as={Link} to='https://markdown-previewer-ochre-mu.vercel.app/' onClick={handleClose} className='button-two rounded-0 m-lg-2 fw-bold input-focus'>Start For Free</Button>
                 </div>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
@@ -129,7 +129,6 @@ function App() {
           <Route path='/' element={<Home handleShowModal={handleShowModal} />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/app' element={<h1>Work in progress</h1>} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer credits={credits} />

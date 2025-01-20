@@ -1,1 +1,16 @@
-{}
+{
+    "name": "markdown-previewer",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+        "markdown-previewer-app",
+        "app"
+    ],
+    "scripts": {
+        "dev": "concurrently \"npm --prefix markdown-previewer-app run dev\" \"npm --prefix app run dev\"",
+        "build": "concurrently \"npm --prefix markdown-previewer-app run build\" \"npm --prefix app run build\""
+    },
+    "devDependencies": {
+        "concurrently": "^7.0.0"
+    }
+}
