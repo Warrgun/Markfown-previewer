@@ -9,7 +9,7 @@ function App() {
   const [editor, setEditor] = useState(
     `# Markdown Previewer
 ## Make websites easier then ever!
-Go back to the [Landing page](https://www.youtube.com)
+Go back to the [Landing page](https://markdown-landing-page.vercel.app)
 ###### Inline code:
 \`console.log("Hello world")\`
 ###### Code block:
