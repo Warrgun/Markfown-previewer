@@ -70,7 +70,7 @@ const Home = ({ handleShowModal }) => {
                         <div className="p-2 w-100 my-md-5">
                             <p className=" fs-5">Effortlessly convert your markdown into beautiful HTML with our user-friendly previewer.</p>
                             <div className="d-flex my-5">
-                                <Button type="button" as={Link} to="/app" className="button-two rounded-0 fw-bold  input-focus">Get Started</Button>
+                                <Button type="button" as={Link} to="https://markdown-previewer-pink.vercel.app" className="button-two rounded-0 fw-bold  input-focus">Get Started</Button>
                                 <Button type="button" className="button-one rounded-0 ms-4 fw-bold  input-focus" onClick={handleModalShow}>Learn More</Button>
                             </div>
                         </div>
