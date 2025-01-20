@@ -119,7 +119,7 @@ function App() {
                 </Nav>
                 <div className=" d-md-flex ms-md-3">
                   <Button onClick={handleShowModal} className='button-one rounded-0 m-lg-2 me-2 fw-bold input-focus'>Sign Up</Button>
-                  <Button type='button' as={Link} to='https://markdown-previewer-ochre-mu.vercel.app/' onClick={handleClose} className='button-two rounded-0 m-lg-2 fw-bold input-focus'>Start For Free</Button>
+                  <Button type='button' as={Link} to='https://markdown-previewer-pink.vercel.app' onClick={handleClose} className='button-two rounded-0 m-lg-2 fw-bold input-focus'>Start For Free</Button>
                 </div>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
