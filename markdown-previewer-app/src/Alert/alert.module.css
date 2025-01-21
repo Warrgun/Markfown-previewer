@@ -1,0 +1,22 @@
+.alert {
+    top: 1.5em;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1100;
+    text-wrap: nowrap;
+}
+
+@media (min-width:321px) {
+    .margin {
+        margin-right: 5px !important;
+    }
+}
+
+@media(max-width:320px) {
+    .alert {
+        text-align: center;
+        text-wrap: wrap;
+        width: 90%;
+        flex-direction: column;
+    }
+}

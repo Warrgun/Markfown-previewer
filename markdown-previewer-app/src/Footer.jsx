@@ -17,6 +17,7 @@ const Footer = ({ credits }) => {
         setValidated(true);
 
         if (form.checkValidity() === true) {
+            setValidated(false);
             console.log(`Footer E-mail: ${email}`);
             setEmail('');
         }

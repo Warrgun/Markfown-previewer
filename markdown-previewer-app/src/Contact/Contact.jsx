@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import AlertComponent from "../Alert/AlertComponent";
 import styles from './contact.module.css'
 
 const Contact = () => {
+    const [contactAlert, setContactAlert] = useState(false);
     const [validated, setValidated] = useState(false);
     const [content, setContent] = useState({
         name: '',
@@ -23,11 +25,18 @@ const Contact = () => {
 
         if (form.checkValidity() === false) {
             e.stopPropagation();
+            setContactAlert(false);
         }
         setValidated(true);
 
         if (form.checkValidity() === true) {
-            setValidated(false)
+            setValidated(false);
+            setContactAlert(true);
+
+            setTimeout(() => {
+                setContactAlert(false);
+            }, 2500);
+
             console.log('Name: ', content.name);
             console.log('E-mail: ', content.email);
             console.log('Title: ', content.title);
@@ -79,6 +88,7 @@ const Contact = () => {
                     </Row>
                 </Container>
             </Container>
+            <AlertComponent state={contactAlert} message={'The form has been sent successfully.'} />
         </>
     );
 }

@@ -3,9 +3,11 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import AlertComponent from './Alert/AlertComponent';
 
 
 function SignUpModal(props) {
+  const [signAlert, setSignAlert] = useState(false);
   const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -27,11 +29,21 @@ function SignUpModal(props) {
 
     if (form.checkValidity() === false) {
       e.stopPropagation();
+      setSignAlert(false);
     }
     setValidated(true);
 
     if (form.checkValidity() === true) {
-      setValidated(false)
+      setValidated(false);
+
+      setTimeout(() => {
+        setSignAlert(true);
+      }, 200);
+
+      setTimeout(() => {
+        setSignAlert(false);
+      }, 2500);
+
       console.log('Name', formData.firstName);
       console.log('Email', formData.email);
       console.log('Password', formData.password);
@@ -92,6 +104,7 @@ function SignUpModal(props) {
           </Modal.Footer>
         </Form>
       </Modal>
+      <AlertComponent state={signAlert} message={'Succesfully signed up.'} />
     </>
   );
 }
