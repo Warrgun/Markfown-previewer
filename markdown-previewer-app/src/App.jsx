@@ -28,8 +28,16 @@ function App() {
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
 
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
+  const handleShow = () => {
+    setShow(true);
+
+    history.pushState({ offcanvasOpen: true }, "");
+  };
+  const handleClose = () => {
+    setShow(false);
+
+    history.replaceState(null, "");
+  };
   const handleScroll = useCallback(() => {
     let scrollPosition = window.scrollY != undefined ? window.scrollY : document.documentElement.scrollTop;
 
@@ -91,6 +99,23 @@ function App() {
         }));
     }
   }, [location])
+
+  useEffect(() => {
+
+    const handlePopUp = (event) => {
+      if (show) {
+        setShow(false);
+
+        history.pushState(null, "");
+      }
+    }
+
+    window.addEventListener('popstate', handlePopUp);
+
+    return (() => {
+      window.removeEventListener("popstate", handlePopUp)
+    })
+  }, [show]);
 
 
   return (

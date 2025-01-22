@@ -31,7 +31,10 @@ const Contact = () => {
 
         if (form.checkValidity() === true) {
             setValidated(false);
-            setContactAlert(true);
+
+            setTimeout(() => {
+                setContactAlert(true);
+            }, 100);
 
             setTimeout(() => {
                 setContactAlert(false);
